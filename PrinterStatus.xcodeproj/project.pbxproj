@@ -7,19 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A610BEA1277E494F00BD493E /* Published+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A610BEA0277E494E00BD493E /* Published+Encodable.swift */; };
 		A6313CCA277D4052009CF8E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6313CC9277D4052009CF8E7 /* AppDelegate.swift */; };
-		A6313CCC277D4052009CF8E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6313CCB277D4052009CF8E7 /* ViewController.swift */; };
 		A6313CCE277D4054009CF8E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6313CCD277D4054009CF8E7 /* Assets.xcassets */; };
 		A6313CD1277D4054009CF8E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6313CCF277D4054009CF8E7 /* Main.storyboard */; };
+		A6313CD9277D43A8009CF8E7 /* Printer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6313CD8277D43A8009CF8E7 /* Printer.swift */; };
+		A6313CDB277D44F3009CF8E7 /* Flavor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6313CDA277D44F3009CF8E7 /* Flavor.swift */; };
+		A6313CDD277D4844009CF8E7 /* PrinterStatusStatusItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6313CDC277D4844009CF8E7 /* PrinterStatusStatusItem.swift */; };
+		A6756D63277D4F0A00B58D60 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = A6756D62277D4F0A00B58D60 /* Preferences */; };
+		A6756D66277D4F2600B58D60 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = A6756D65277D4F2600B58D60 /* Defaults */; };
+		A6756D69277D4F8F00B58D60 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = A6756D68277D4F8F00B58D60 /* LaunchAtLogin */; };
+		A6756D6B277D4F9D00B58D60 /* PreferencesPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6756D6A277D4F9D00B58D60 /* PreferencesPane.swift */; };
+		A6756D6D277D519400B58D60 /* PreferencesPaneIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6756D6C277D519400B58D60 /* PreferencesPaneIdentifier.swift */; };
+		A6756D70277D7C9F00B58D60 /* TermiNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = A6756D6F277D7C9F00B58D60 /* TermiNetwork */; };
+		A6756D72277D7CCB00B58D60 /* Duet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6756D71277D7CCB00B58D60 /* Duet.swift */; };
+		A6756D74277D7D1A00B58D60 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6756D73277D7D1A00B58D60 /* Status.swift */; };
+		A6756D76277D8E3B00B58D60 /* EditPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6756D75277D8E3B00B58D60 /* EditPrinter.swift */; };
+		A681ADCA277E632100E39FDC /* Percentage in Frameworks */ = {isa = PBXBuildFile; productRef = A681ADC9277E632100E39FDC /* Percentage */; };
+		A6C842D02784EF6E0030F64E /* PrinterMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C842CF2784EF6E0030F64E /* PrinterMenuItem.swift */; };
+		A6DF4ADD277DAFDF0092BC54 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = A6DF4ADC277DAFDF0092BC54 /* SwiftyJSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A610BEA0277E494E00BD493E /* Published+Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Published+Encodable.swift"; sourceTree = "<group>"; };
 		A6313CC6277D4052009CF8E7 /* PrinterStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrinterStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6313CC9277D4052009CF8E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A6313CCB277D4052009CF8E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A6313CCD277D4054009CF8E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6313CD0277D4054009CF8E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6313CD2277D4054009CF8E7 /* PrinterStatus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PrinterStatus.entitlements; sourceTree = "<group>"; };
+		A6313CD8277D43A8009CF8E7 /* Printer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Printer.swift; sourceTree = "<group>"; };
+		A6313CDA277D44F3009CF8E7 /* Flavor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flavor.swift; sourceTree = "<group>"; };
+		A6313CDC277D4844009CF8E7 /* PrinterStatusStatusItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterStatusStatusItem.swift; sourceTree = "<group>"; };
+		A6756D60277D4E1D00B58D60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A6756D6A277D4F9D00B58D60 /* PreferencesPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesPane.swift; sourceTree = "<group>"; };
+		A6756D6C277D519400B58D60 /* PreferencesPaneIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesPaneIdentifier.swift; sourceTree = "<group>"; };
+		A6756D71277D7CCB00B58D60 /* Duet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duet.swift; sourceTree = "<group>"; };
+		A6756D73277D7D1A00B58D60 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		A6756D75277D8E3B00B58D60 /* EditPrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPrinter.swift; sourceTree = "<group>"; };
+		A6C842CF2784EF6E0030F64E /* PrinterMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterMenuItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +52,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6756D69277D4F8F00B58D60 /* LaunchAtLogin in Frameworks */,
+				A6756D66277D4F2600B58D60 /* Defaults in Frameworks */,
+				A681ADCA277E632100E39FDC /* Percentage in Frameworks */,
+				A6756D63277D4F0A00B58D60 /* Preferences in Frameworks */,
+				A6DF4ADD277DAFDF0092BC54 /* SwiftyJSON in Frameworks */,
+				A6756D70277D7C9F00B58D60 /* TermiNetwork in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,11 +83,21 @@
 		A6313CC8277D4052009CF8E7 /* PrinterStatus */ = {
 			isa = PBXGroup;
 			children = (
+				A6756D60277D4E1D00B58D60 /* Info.plist */,
 				A6313CC9277D4052009CF8E7 /* AppDelegate.swift */,
-				A6313CCB277D4052009CF8E7 /* ViewController.swift */,
+				A6C842CF2784EF6E0030F64E /* PrinterMenuItem.swift */,
+				A6756D6C277D519400B58D60 /* PreferencesPaneIdentifier.swift */,
 				A6313CCD277D4054009CF8E7 /* Assets.xcassets */,
 				A6313CCF277D4054009CF8E7 /* Main.storyboard */,
 				A6313CD2277D4054009CF8E7 /* PrinterStatus.entitlements */,
+				A6313CD8277D43A8009CF8E7 /* Printer.swift */,
+				A610BEA0277E494E00BD493E /* Published+Encodable.swift */,
+				A6313CDA277D44F3009CF8E7 /* Flavor.swift */,
+				A6313CDC277D4844009CF8E7 /* PrinterStatusStatusItem.swift */,
+				A6756D6A277D4F9D00B58D60 /* PreferencesPane.swift */,
+				A6756D75277D8E3B00B58D60 /* EditPrinter.swift */,
+				A6756D71277D7CCB00B58D60 /* Duet.swift */,
+				A6756D73277D7D1A00B58D60 /* Status.swift */,
 			);
 			path = PrinterStatus;
 			sourceTree = "<group>";
@@ -77,6 +118,14 @@
 			dependencies = (
 			);
 			name = PrinterStatus;
+			packageProductDependencies = (
+				A6756D62277D4F0A00B58D60 /* Preferences */,
+				A6756D65277D4F2600B58D60 /* Defaults */,
+				A6756D68277D4F8F00B58D60 /* LaunchAtLogin */,
+				A6756D6F277D7C9F00B58D60 /* TermiNetwork */,
+				A6DF4ADC277DAFDF0092BC54 /* SwiftyJSON */,
+				A681ADC9277E632100E39FDC /* Percentage */,
+			);
 			productName = PrinterStatus;
 			productReference = A6313CC6277D4052009CF8E7 /* PrinterStatus.app */;
 			productType = "com.apple.product-type.application";
@@ -105,6 +154,14 @@
 				Base,
 			);
 			mainGroup = A6313CBD277D4052009CF8E7;
+			packageReferences = (
+				A6756D61277D4F0A00B58D60 /* XCRemoteSwiftPackageReference "Preferences" */,
+				A6756D64277D4F2600B58D60 /* XCRemoteSwiftPackageReference "Defaults" */,
+				A6756D67277D4F8F00B58D60 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+				A6756D6E277D7C9E00B58D60 /* XCRemoteSwiftPackageReference "TermiNetwork" */,
+				A6DF4ADB277DAFDF0092BC54 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				A681ADC8277E632100E39FDC /* XCRemoteSwiftPackageReference "Percentage" */,
+			);
 			productRefGroup = A6313CC7277D4052009CF8E7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -131,8 +188,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6313CCC277D4052009CF8E7 /* ViewController.swift in Sources */,
+				A6756D6B277D4F9D00B58D60 /* PreferencesPane.swift in Sources */,
+				A6756D74277D7D1A00B58D60 /* Status.swift in Sources */,
+				A610BEA1277E494F00BD493E /* Published+Encodable.swift in Sources */,
+				A6C842D02784EF6E0030F64E /* PrinterMenuItem.swift in Sources */,
+				A6313CD9277D43A8009CF8E7 /* Printer.swift in Sources */,
+				A6313CDD277D4844009CF8E7 /* PrinterStatusStatusItem.swift in Sources */,
+				A6313CDB277D44F3009CF8E7 /* Flavor.swift in Sources */,
+				A6756D6D277D519400B58D60 /* PreferencesPaneIdentifier.swift in Sources */,
+				A6756D76277D8E3B00B58D60 /* EditPrinter.swift in Sources */,
 				A6313CCA277D4052009CF8E7 /* AppDelegate.swift in Sources */,
+				A6756D72277D7CCB00B58D60 /* Duet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +343,7 @@
 				DEVELOPMENT_TEAM = LG822W3XMH;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PrinterStatus/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -304,6 +371,7 @@
 				DEVELOPMENT_TEAM = LG822W3XMH;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PrinterStatus/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -341,6 +409,90 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A6756D61277D4F0A00B58D60 /* XCRemoteSwiftPackageReference "Preferences" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Preferences";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		A6756D64277D4F2600B58D60 /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		A6756D67277D4F8F00B58D60 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		A6756D6E277D7C9E00B58D60 /* XCRemoteSwiftPackageReference "TermiNetwork" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/billp/TermiNetwork";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		A681ADC8277E632100E39FDC /* XCRemoteSwiftPackageReference "Percentage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Percentage";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		A6DF4ADB277DAFDF0092BC54 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A6756D62277D4F0A00B58D60 /* Preferences */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A6756D61277D4F0A00B58D60 /* XCRemoteSwiftPackageReference "Preferences" */;
+			productName = Preferences;
+		};
+		A6756D65277D4F2600B58D60 /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A6756D64277D4F2600B58D60 /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
+		};
+		A6756D68277D4F8F00B58D60 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A6756D67277D4F8F00B58D60 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
+		};
+		A6756D6F277D7C9F00B58D60 /* TermiNetwork */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A6756D6E277D7C9E00B58D60 /* XCRemoteSwiftPackageReference "TermiNetwork" */;
+			productName = TermiNetwork;
+		};
+		A681ADC9277E632100E39FDC /* Percentage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A681ADC8277E632100E39FDC /* XCRemoteSwiftPackageReference "Percentage" */;
+			productName = Percentage;
+		};
+		A6DF4ADC277DAFDF0092BC54 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A6DF4ADB277DAFDF0092BC54 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A6313CBE277D4052009CF8E7 /* Project object */;
 }

@@ -1,0 +1,61 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Defaults",
+        "repositoryURL": "https://github.com/sindresorhus/Defaults",
+        "state": {
+          "branch": "main",
+          "revision": "5b30f01e46d25f7b59e37d6d96b2030d6c96ac87",
+          "version": null
+        }
+      },
+      {
+        "package": "LaunchAtLogin",
+        "repositoryURL": "https://github.com/sindresorhus/LaunchAtLogin",
+        "state": {
+          "branch": "main",
+          "revision": "e8171b3e38a2816f579f58f3dac1522aa39efe41",
+          "version": null
+        }
+      },
+      {
+        "package": "Percentage",
+        "repositoryURL": "https://github.com/sindresorhus/Percentage",
+        "state": {
+          "branch": "main",
+          "revision": "c51749342bfb350deb6739faff112c906abe2c25",
+          "version": null
+        }
+      },
+      {
+        "package": "Preferences",
+        "repositoryURL": "https://github.com/sindresorhus/Preferences",
+        "state": {
+          "branch": "main",
+          "revision": "ffeaaad1def45d0625720dc1adae3789cd9c167d",
+          "version": null
+        }
+      },
+      {
+        "package": "SwiftyJSON",
+        "repositoryURL": "https://github.com/SwiftyJSON/SwiftyJSON.git",
+        "state": {
+          "branch": null,
+          "revision": "b3dcd7dbd0d488e1a7077cb33b00f2083e382f07",
+          "version": "5.0.1"
+        }
+      },
+      {
+        "package": "TermiNetwork",
+        "repositoryURL": "https://github.com/billp/TermiNetwork",
+        "state": {
+          "branch": null,
+          "revision": "17ec89481e2b0b2411f5a16d58ba9d6149af83d0",
+          "version": "3.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
