@@ -704,6 +704,54 @@
             </objects>
             <point key="canvasLocation" x="57" y="-96"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="2ef-35-fCV">
+            <objects>
+                <viewController storyboardIdentifier="definitionListItem" id="g1a-yT-DvU" sceneMemberID="viewController">
+                    <stackView key="view" distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="1000" verticalStackHuggingPriority="1000" horizontalClippingResistancePriority="250" verticalClippingResistancePriority="250" detachesHiddenViews="YES" id="d8w-9J-gmQ" customClass="DefinitionListItemView" customModule="PrinterStatus" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="97" height="24"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qVp-OD-XAT">
+                                <rect key="frame" x="14" y="7" width="29" height="13"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Name" id="ZiH-W1-VSz">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KEM-2S-80t">
+                                <rect key="frame" x="47" y="5" width="36" height="15"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Value" id="RX7-9B-8h9">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <edgeInsets key="edgeInsets" left="16" right="16" top="4" bottom="4"/>
+                        <constraints>
+                            <constraint firstItem="qVp-OD-XAT" firstAttribute="leading" secondItem="d8w-9J-gmQ" secondAttribute="leading" constant="16" id="CTR-gM-NEF"/>
+                            <constraint firstItem="KEM-2S-80t" firstAttribute="leading" secondItem="qVp-OD-XAT" secondAttribute="trailing" constant="8" symbolic="YES" id="G1u-Vg-Dd8"/>
+                        </constraints>
+                        <visibilityPriorities>
+                            <integer value="1000"/>
+                            <integer value="1000"/>
+                        </visibilityPriorities>
+                        <customSpacing>
+                            <real value="3.4028234663852886e+38"/>
+                            <real value="3.4028234663852886e+38"/>
+                        </customSpacing>
+                        <connections>
+                            <outlet property="nameView" destination="qVp-OD-XAT" id="U4f-5c-AT9"/>
+                            <outlet property="valueView" destination="KEM-2S-80t" id="i0a-Rn-wkn"/>
+                        </connections>
+                    </stackView>
+                </viewController>
+                <customObject id="1GU-bq-yBJ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="573" y="-191"/>
+        </scene>
         <!--Window Controller-->
         <scene sceneID="eTU-So-kk0">
             <objects>

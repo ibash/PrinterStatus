@@ -17,6 +17,7 @@ class Duet {
   let statusToMachineStatus = [
     "idle": MachineStatus.idle,
     "processing": MachineStatus.printing,
+    "simulating": MachineStatus.printing,
   ]
 
   init(host: String) {
