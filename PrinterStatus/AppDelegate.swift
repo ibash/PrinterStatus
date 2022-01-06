@@ -57,7 +57,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
           self.updateMenu(printers: printers)
         }
 
-        try await Task.sleep(nanoseconds: 1_000_000_000)
+        // TODO(ibash) this is really aggressive, should do something like:
+        // 1. Printers that are online and printing get checked every minute
+        // 2. Printers that are offline get checked every 5 minutes
+        // 3. If the menu is clicked, all printers are checked
+        try await Task.sleep(nanoseconds: 20 * 1_000_000_000)
       }
     }
   }

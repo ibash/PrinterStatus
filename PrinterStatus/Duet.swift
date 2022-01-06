@@ -35,9 +35,17 @@ class Duet {
 
   func status() async throws -> Status {
     let request = URLRequest(url: self.url)
-    let (data, response) = try await URLSession.shared.data(for: request)
+    var json: JSON
 
-    let json = try! JSON(data: data)
+    do {
+      let (data, response) = try await URLSession.shared.data(for: request)
+      json = try! JSON(data: data)
+    } catch let error as NSError
+      where error.domain == NSURLErrorDomain
+      && (error.code == NSURLErrorCannotConnectToHost || error.code == NSURLErrorTimedOut)
+    {
+      return Status(status: .offline)
+    }
 
     let status: MachineStatus =
       statusToMachineStatus[json["state"]["status"].stringValue] ?? .offline

@@ -6,12 +6,11 @@
 //
 
 import Defaults
+import LaunchAtLogin
 import Preferences
 import SwiftUI
 
 struct PreferencesPane: View {
-  @State private var launchOnLogin = true
-
   @Default(.printers) var printers
   @State private var selected = Set<Printer.ID>()
   @State private var order = [KeyPathComparator(\Printer.name)]
@@ -28,12 +27,14 @@ struct PreferencesPane: View {
     let storyboard = NSStoryboard(name: "Main", bundle: nil)
     let controller =
       storyboard.instantiateController(withIdentifier: "editPrinterWindow") as! NSWindowController
+    let window = controller.window!
 
     let viewController = controller.window!.contentViewController as! EditPrinterHostingController
-    viewController.rootView = EditPrinter(printer: printer.copy())
-    controller.window!.makeKeyAndOrderFront(nil)
+    let contentView = EditPrinter(printer: printer.copy())
+      .environment(\.hostingWindow, { [weak window] in return window })
 
-    print(controller)
+    viewController.rootView = AnyView(contentView)
+    window.makeKeyAndOrderFront(nil)
   }
 
   func remove() {
@@ -47,7 +48,7 @@ struct PreferencesPane: View {
     Preferences.Container(contentWidth: 450.0) {
 
       Preferences.Section(title: "General") {
-        Toggle("Launch on Login", isOn: $launchOnLogin)
+        LaunchAtLogin.Toggle()
       }
 
       Preferences.Section(title: "Printers") {

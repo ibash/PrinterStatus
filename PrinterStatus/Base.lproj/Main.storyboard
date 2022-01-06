@@ -11,9 +11,9 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="PrinterStatus" id="1Xt-HY-uBw">
+                            <menuItem title="Printer Status" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="PrinterStatus" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="Printer Status" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
                                         <menuItem title="About PrinterStatus" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -660,7 +660,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="PrinterStatus Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="Printer Status Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -688,13 +688,13 @@
                                 <action selector="preferencesMenuItemActionHandler:" target="Voe-Tx-rLC" id="w3h-49-fat"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="About PrinterStatus" id="LR0-Km-Wsq">
+                        <menuItem title="About Printer Status" id="LR0-Km-Wsq">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Leo-54-N3F"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="Quit PrinterStatus" keyEquivalent="q" id="uQW-bx-VWV">
+                        <menuItem title="Quit Printer Status" keyEquivalent="q" id="uQW-bx-VWV">
                             <connections>
                                 <action selector="terminate:" target="Ady-hI-5gd" id="Sf8-Yq-M1G"/>
                             </connections>
@@ -713,7 +713,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qVp-OD-XAT">
-                                <rect key="frame" x="14" y="7" width="29" height="13"/>
+                                <rect key="frame" x="14" y="4" width="27" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Name" id="ZiH-W1-VSz">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -721,7 +721,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KEM-2S-80t">
-                                <rect key="frame" x="47" y="5" width="36" height="15"/>
+                                <rect key="frame" x="45" y="4" width="38" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Value" id="RX7-9B-8h9">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -756,7 +756,7 @@
         <scene sceneID="eTU-So-kk0">
             <objects>
                 <windowController storyboardIdentifier="editPrinterWindow" id="JgX-iB-gIG" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Fe5-r3-ReY">
+                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Fe5-r3-ReY">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="239" width="480" height="270"/>

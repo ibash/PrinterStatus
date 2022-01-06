@@ -10,11 +10,15 @@ import SwiftUI
 
 struct EditPrinter: View {
   @ObservedObject var printer: Printer
+  @Environment(\.hostingWindow) var hostingWindow
 
-  func cancel() {}
+  func cancel() {
+    self.hostingWindow()?.close()
+  }
 
   func save() {
     printer.save()
+    self.hostingWindow()?.close()
   }
 
   var body: some View {
@@ -64,10 +68,10 @@ struct EditPrinter_Previews: PreviewProvider {
   }
 }
 
-class EditPrinterHostingController: NSHostingController<EditPrinter> {
+class EditPrinterHostingController: NSHostingController<AnyView> {
 
   required init?(coder: NSCoder) {
-    super.init(coder: coder, rootView: EditPrinter(printer: Printer()))
+    super.init(coder: coder, rootView: AnyView(EditPrinter(printer: Printer())))
   }
 
   override func viewDidLoad() {

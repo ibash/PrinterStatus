@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A610BEA1277E494F00BD493E /* Published+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A610BEA0277E494E00BD493E /* Published+Encodable.swift */; };
+		A62124BB2786C5B1008D8E5A /* HostingWindowKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62124BA2786C5B1008D8E5A /* HostingWindowKey.swift */; };
 		A62FF9CD278689FD00C4367A /* DefinitionListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62FF9CC278689FD00C4367A /* DefinitionListItemView.swift */; };
 		A6313CCA277D4052009CF8E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6313CC9277D4052009CF8E7 /* AppDelegate.swift */; };
 		A6313CCE277D4054009CF8E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6313CCD277D4054009CF8E7 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		A610BEA0277E494E00BD493E /* Published+Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Published+Encodable.swift"; sourceTree = "<group>"; };
+		A62124BA2786C5B1008D8E5A /* HostingWindowKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingWindowKey.swift; sourceTree = "<group>"; };
 		A62FF9CC278689FD00C4367A /* DefinitionListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionListItemView.swift; sourceTree = "<group>"; };
 		A6313CC6277D4052009CF8E7 /* PrinterStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrinterStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6313CC9277D4052009CF8E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				A6313CDC277D4844009CF8E7 /* PrinterStatusStatusItem.swift */,
 				A6756D6A277D4F9D00B58D60 /* PreferencesPane.swift */,
 				A6756D75277D8E3B00B58D60 /* EditPrinter.swift */,
+				A62124BA2786C5B1008D8E5A /* HostingWindowKey.swift */,
 				A6756D71277D7CCB00B58D60 /* Duet.swift */,
 				A6756D73277D7D1A00B58D60 /* Status.swift */,
 			);
@@ -200,6 +203,7 @@
 				A6313CDB277D44F3009CF8E7 /* Flavor.swift in Sources */,
 				A6756D6D277D519400B58D60 /* PreferencesPaneIdentifier.swift in Sources */,
 				A6756D76277D8E3B00B58D60 /* EditPrinter.swift in Sources */,
+				A62124BB2786C5B1008D8E5A /* HostingWindowKey.swift in Sources */,
 				A6313CCA277D4052009CF8E7 /* AppDelegate.swift in Sources */,
 				A6756D72277D7CCB00B58D60 /* Duet.swift in Sources */,
 				A62FF9CD278689FD00C4367A /* DefinitionListItemView.swift in Sources */,
@@ -348,6 +352,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PrinterStatus/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Printer Status";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -376,6 +381,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PrinterStatus/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Printer Status";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
