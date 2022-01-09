@@ -48,12 +48,25 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
       while true {
         let printers = Printer.all
 
-        for printer in printers {
-          await printer.updateStatus()
+        DispatchQueue.main.async {
+          self.removeDeletedPrinters(printers)
         }
 
+        await withTaskGroup(
+          of: Void.self,
+          body: { group in
+            for printer in printers {
+              group.addTask {
+                await printer.updateStatus()
+                DispatchQueue.main.async {
+                  self.updateMenuForPrinter(printer)
+                }
+              }
+            }
+          })
+
         DispatchQueue.main.async {
-          self.updateMenu(printers: printers)
+          self.updateOverallProgress(printers)
         }
 
         // TODO(ibash) this is really aggressive, should do something like:
@@ -90,7 +103,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     self.preferencesWindowController.window?.makeKeyAndOrderFront(nil)
   }
 
-  func updateMenu(printers: [Printer]) {
+  func updateOverallProgress(_ printers: [Printer]) {
     // menubar displays the progress of the print that's ending soonest
     let soonest =
       printers
@@ -99,7 +112,28 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
       .first
 
     self.statusItem.title = soonest?.status?.progress.description
+  }
 
+  func updateMenuForPrinter(_ printer: Printer) {
+    if self.printerMenuItems[printer.id] == nil {
+      let printerMenuItem = PrinterMenuItem(printer: printer)
+      self.printerMenuItems[printer.id] = printerMenuItem
+
+      var i = 0
+      for item in printerMenuItem.items() {
+        self.mainStatusMenu.insertItem(item, at: i)
+        i += 1
+      }
+    }
+
+    self.printerMenuItems[printer.id]!.update(printer: printer)
+
+    while self.mainStatusMenu.item(at: 0)?.isSeparatorItem ?? false {
+      self.mainStatusMenu.removeItem(at: 0)
+    }
+  }
+
+  func removeDeletedPrinters(_ printers: [Printer]) {
     // menu has an entry for each printer with stats (similar to what happens
     // when you option+click the wifi menu)
     var toRemove = Set(self.printerMenuItems.keys)
@@ -110,25 +144,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
           self.mainStatusMenu.removeItem(item)
         }
         self.printerMenuItems.removeValue(forKey: id)
-      }
-    }
-
-    for printer in printers {
-      if self.printerMenuItems[printer.id] == nil {
-        let printerMenuItem = PrinterMenuItem(printer: printer)
-        self.printerMenuItems[printer.id] = printerMenuItem
-
-        var i = 0
-        for item in printerMenuItem.items() {
-          self.mainStatusMenu.insertItem(item, at: i)
-          i += 1
-        }
-      }
-
-      self.printerMenuItems[printer.id]!.update(printer: printer)
-
-      while self.mainStatusMenu.item(at: 0)?.isSeparatorItem ?? false {
-        self.mainStatusMenu.removeItem(at: 0)
       }
     }
   }

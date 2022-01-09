@@ -75,6 +75,12 @@ struct EditPrinter: View {
 
         TextField("API Key", text: $printer.apiKey)
           .textFieldStyle(RoundedBorderTextFieldStyle())
+
+        TextField(
+          "Stream URL", text: $printer.stream,
+          prompt: Text("http://printer.local/stream")
+        )
+        .textFieldStyle(RoundedBorderTextFieldStyle())
       }
 
       Section {

@@ -46,7 +46,7 @@ class Duet: Connection {
   }
 
   func status() async throws -> Status {
-    let request = URLRequest(url: self.url)
+    let request = URLRequest(url: self.url, timeoutInterval: 10)
     var json: JSON
 
     do {

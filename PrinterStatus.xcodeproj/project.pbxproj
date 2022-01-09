@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A610BEA1277E494F00BD493E /* Published+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A610BEA0277E494E00BD493E /* Published+Encodable.swift */; };
+		A610C122278B7E300000B034 /* WebViewMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A610C121278B7E300000B034 /* WebViewMenuItem.swift */; };
 		A61FB551278B6EC500451EAC /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61FB550278B6EC500451EAC /* Connection.swift */; };
 		A62124BB2786C5B1008D8E5A /* HostingWindowKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62124BA2786C5B1008D8E5A /* HostingWindowKey.swift */; };
 		A62FF9CD278689FD00C4367A /* DefinitionListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62FF9CC278689FD00C4367A /* DefinitionListItemView.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		A610BEA0277E494E00BD493E /* Published+Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Published+Encodable.swift"; sourceTree = "<group>"; };
+		A610C121278B7E300000B034 /* WebViewMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewMenuItem.swift; sourceTree = "<group>"; };
 		A61FB550278B6EC500451EAC /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		A62124BA2786C5B1008D8E5A /* HostingWindowKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingWindowKey.swift; sourceTree = "<group>"; };
 		A62FF9CC278689FD00C4367A /* DefinitionListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionListItemView.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				A6756D60277D4E1D00B58D60 /* Info.plist */,
 				A6313CC9277D4052009CF8E7 /* AppDelegate.swift */,
 				A6C842CF2784EF6E0030F64E /* PrinterMenuItem.swift */,
+				A610C121278B7E300000B034 /* WebViewMenuItem.swift */,
 				A62FF9CC278689FD00C4367A /* DefinitionListItemView.swift */,
 				A6756D6C277D519400B58D60 /* PreferencesPaneIdentifier.swift */,
 				A6313CCD277D4054009CF8E7 /* Assets.xcassets */,
@@ -235,6 +238,7 @@
 				A6756D76277D8E3B00B58D60 /* EditPrinter.swift in Sources */,
 				A62124BB2786C5B1008D8E5A /* HostingWindowKey.swift in Sources */,
 				A6313CCA277D4052009CF8E7 /* AppDelegate.swift in Sources */,
+				A610C122278B7E300000B034 /* WebViewMenuItem.swift in Sources */,
 				A6756D72277D7CCB00B58D60 /* Duet.swift in Sources */,
 				A62FF9CD278689FD00C4367A /* DefinitionListItemView.swift in Sources */,
 			);

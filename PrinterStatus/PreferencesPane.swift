@@ -53,7 +53,7 @@ struct PreferencesPane: View {
           TableColumn("Name", value: \.name) { p in
             Text(p.name)
               .onTapGesture(
-                count: 1,
+                count: 2,
                 perform: {
                   self.editPrinter(printer: p)
                 })
@@ -62,7 +62,7 @@ struct PreferencesPane: View {
           TableColumn("Host", value: \.host) { p in
             Text(p.host)
               .onTapGesture(
-                count: 1,
+                count: 2,
                 perform: {
                   self.editPrinter(printer: p)
                 })

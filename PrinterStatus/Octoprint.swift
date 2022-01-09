@@ -58,7 +58,7 @@ class Octoprint: Connection {
   }
 
   func test() async -> Bool {
-    let request = URLRequest(url: self.url)
+    let request = URLRequest(url: self.url, timeoutInterval: 10)
     var isConnected = false
 
     do {

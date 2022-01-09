@@ -26,6 +26,7 @@ class Printer: Identifiable, Codable, ObservableObject, Defaults.Serializable {
   // hostname, ip, or url
   @Published var host: String = ""
   @Published var apiKey: String = ""
+  @Published var stream: String = ""
 
   var status: Status?
 
@@ -45,21 +46,25 @@ class Printer: Identifiable, Codable, ObservableObject, Defaults.Serializable {
   }
 
   var isEmpty: Bool {
-    return self.name == "" && self.host == "" && self.apiKey == ""
+    return [
+      self.name, self.host, self.apiKey, self.stream,
+    ].allSatisfy({ $0.isEmpty })
   }
 
   init() {}
 
-  init(id: UUID, flavor: Flavor, name: String, host: String, apiKey: String) {
+  init(id: UUID, flavor: Flavor, name: String, host: String, apiKey: String, stream: String) {
     self.id = id
     self.flavor = flavor
     self.name = name
     self.host = host
     self.apiKey = apiKey
+    self.stream = stream
   }
 
   func copy() -> Printer {
-    let copy = Printer(id: id, flavor: flavor, name: name, host: host, apiKey: apiKey)
+    let copy = Printer(
+      id: id, flavor: flavor, name: name, host: host, apiKey: apiKey, stream: stream)
     return copy
   }
 
