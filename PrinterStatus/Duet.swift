@@ -11,7 +11,6 @@ import SwiftyJSON
 
 class Duet {
 
-  let host: String
   private var url: URL
 
   let statusToMachineStatus = [
@@ -21,14 +20,12 @@ class Duet {
   ]
 
   init(host: String) {
-    self.host = host
-
     // TODO(ibash) should not let this crash
-    // this is a bit subtle, but we init with the self.host in case it's a full url
-    var components = URLComponents(string: self.host)!
+    // this is a bit subtle, but we init with the host in case it's a full url
+    var components = URLComponents(string: host)!
     components.path = "/machine/status"
     components.scheme = components.scheme ?? "http"
-    components.host = components.host ?? self.host
+    components.host = components.host ?? host
 
     self.url = components.url!
   }

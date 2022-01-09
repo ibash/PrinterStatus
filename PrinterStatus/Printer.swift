@@ -19,6 +19,7 @@ class Printer: Identifiable, Codable, ObservableObject, Defaults.Serializable {
   @Published var name: String = ""
   // hostname, ip, or url
   @Published var host: String = ""
+  @Published var apiKey: String = ""
 
   var status: Status?
 
@@ -30,15 +31,16 @@ class Printer: Identifiable, Codable, ObservableObject, Defaults.Serializable {
 
   init() {}
 
-  init(id: UUID, flavor: Flavor, name: String, host: String) {
+  init(id: UUID, flavor: Flavor, name: String, host: String, apiKey: String) {
     self.id = id
     self.flavor = flavor
     self.name = name
     self.host = host
+    self.apiKey = apiKey
   }
 
   func copy() -> Printer {
-    let copy = Printer(id: id, flavor: flavor, name: name, host: host)
+    let copy = Printer(id: id, flavor: flavor, name: name, host: host, apiKey: apiKey)
     return copy
   }
 
@@ -47,6 +49,9 @@ class Printer: Identifiable, Codable, ObservableObject, Defaults.Serializable {
     case .duet:
       let duet = Duet(host: self.host)
       self.status = try! await duet.status()
+    case .octoprint:
+      let octoprint = Octoprint(host: self.host, apiKey: self.apiKey)
+      self.status = try! await octoprint.status()
     default:
       fatalError("Unhandled flavor")
     }

@@ -16,6 +16,7 @@
 		A6313CD9277D43A8009CF8E7 /* Printer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6313CD8277D43A8009CF8E7 /* Printer.swift */; };
 		A6313CDB277D44F3009CF8E7 /* Flavor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6313CDA277D44F3009CF8E7 /* Flavor.swift */; };
 		A6313CDD277D4844009CF8E7 /* PrinterStatusStatusItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6313CDC277D4844009CF8E7 /* PrinterStatusStatusItem.swift */; };
+		A66B9597278AD0CF006EABE4 /* Octoprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66B9596278AD0CF006EABE4 /* Octoprint.swift */; };
 		A6756D63277D4F0A00B58D60 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = A6756D62277D4F0A00B58D60 /* Preferences */; };
 		A6756D66277D4F2600B58D60 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = A6756D65277D4F2600B58D60 /* Defaults */; };
 		A6756D69277D4F8F00B58D60 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = A6756D68277D4F8F00B58D60 /* LaunchAtLogin */; };
@@ -42,6 +43,7 @@
 		A6313CD8277D43A8009CF8E7 /* Printer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Printer.swift; sourceTree = "<group>"; };
 		A6313CDA277D44F3009CF8E7 /* Flavor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flavor.swift; sourceTree = "<group>"; };
 		A6313CDC277D4844009CF8E7 /* PrinterStatusStatusItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterStatusStatusItem.swift; sourceTree = "<group>"; };
+		A66B9596278AD0CF006EABE4 /* Octoprint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Octoprint.swift; sourceTree = "<group>"; };
 		A6756D60277D4E1D00B58D60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A6756D6A277D4F9D00B58D60 /* PreferencesPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesPane.swift; sourceTree = "<group>"; };
 		A6756D6C277D519400B58D60 /* PreferencesPaneIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesPaneIdentifier.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				A62124BA2786C5B1008D8E5A /* HostingWindowKey.swift */,
 				A6756D71277D7CCB00B58D60 /* Duet.swift */,
 				A6756D73277D7D1A00B58D60 /* Status.swift */,
+				A66B9596278AD0CF006EABE4 /* Octoprint.swift */,
 			);
 			path = PrinterStatus;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				A6313CDD277D4844009CF8E7 /* PrinterStatusStatusItem.swift in Sources */,
 				A6313CDB277D44F3009CF8E7 /* Flavor.swift in Sources */,
 				A6756D6D277D519400B58D60 /* PreferencesPaneIdentifier.swift in Sources */,
+				A66B9597278AD0CF006EABE4 /* Octoprint.swift in Sources */,
 				A6756D76277D8E3B00B58D60 /* EditPrinter.swift in Sources */,
 				A62124BB2786C5B1008D8E5A /* HostingWindowKey.swift in Sources */,
 				A6313CCA277D4052009CF8E7 /* AppDelegate.swift in Sources */,

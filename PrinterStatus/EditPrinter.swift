@@ -23,32 +23,45 @@ struct EditPrinter: View {
 
   var body: some View {
     VStack(alignment: .leading) {
-      Text("Name")
-        .font(.callout)
-        .bold()
-      TextField("My printer", text: $printer.name)
-        .textFieldStyle(RoundedBorderTextFieldStyle())
+      Group {
+        Text("Name")
+          .font(.callout)
+          .bold()
+        TextField("My printer", text: $printer.name)
+          .textFieldStyle(RoundedBorderTextFieldStyle())
 
-      Spacer().frame(height: 16)
-
-      Text("Printer Type")
-        .font(.callout)
-        .bold()
-
-      Picker("Printer Type", selection: $printer.flavor) {
-        Text("Duet").tag(Flavor.duet)
-        Text("OctoPrint").tag(Flavor.octoprint)
-        Text("Repetier").tag(Flavor.repetier)
+        Spacer().frame(height: 16)
       }
-      .labelsHidden()
+      Group {
+        Text("Printer Type")
+          .font(.callout)
+          .bold()
 
-      Spacer().frame(height: 16)
+        Picker("Printer Type", selection: $printer.flavor) {
+          Text("Duet").tag(Flavor.duet)
+          Text("OctoPrint").tag(Flavor.octoprint)
+          // Text("Repetier").tag(Flavor.repetier)
+        }
+        .labelsHidden()
 
-      Text("Hostname, IP, or URL")
-        .font(.callout)
-        .bold()
-      TextField("http://printer.local", text: $printer.host)
-        .textFieldStyle(RoundedBorderTextFieldStyle())
+        Spacer().frame(height: 16)
+      }
+      Group {
+
+        Text("Hostname, IP, or URL")
+          .font(.callout)
+          .bold()
+        TextField("http://printer.local", text: $printer.host)
+          .textFieldStyle(RoundedBorderTextFieldStyle())
+
+        Spacer().frame(height: 16)
+
+        Text("API Key")
+          .font(.callout)
+          .bold()
+        TextField("API Key", text: $printer.apiKey)
+          .textFieldStyle(RoundedBorderTextFieldStyle())
+      }
 
       HStack {
         Spacer()
