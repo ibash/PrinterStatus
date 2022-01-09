@@ -9,7 +9,7 @@ import Foundation
 import Percentage
 import SwiftyJSON
 
-class Duet {
+class Duet: Connection {
 
   private var url: URL
 
@@ -30,12 +30,27 @@ class Duet {
     self.url = components.url!
   }
 
+  func test() async -> Bool {
+    let request = URLRequest(url: self.url)
+    var isConnected = false
+
+    do {
+      let (data, _) = try await URLSession.shared.data(for: request)
+      let _ = try! JSON(data: data)
+      isConnected = true
+    } catch _ {
+      // ignored
+    }
+
+    return isConnected
+  }
+
   func status() async throws -> Status {
     let request = URLRequest(url: self.url)
     var json: JSON
 
     do {
-      let (data, response) = try await URLSession.shared.data(for: request)
+      let (data, _) = try await URLSession.shared.data(for: request)
       json = try! JSON(data: data)
     } catch let error as NSError
       where error.domain == NSURLErrorDomain

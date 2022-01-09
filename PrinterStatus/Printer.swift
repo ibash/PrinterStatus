@@ -14,6 +14,12 @@ class Printer: Identifiable, Codable, ObservableObject, Defaults.Serializable {
     Defaults[.printers]
   }
 
+  static func updateAll() async {
+    for printer in Defaults[.printers] {
+      await printer.updateStatus()
+    }
+  }
+
   @Published var id = UUID()
   @Published var flavor: Flavor = .duet
   @Published var name: String = ""
@@ -23,10 +29,23 @@ class Printer: Identifiable, Codable, ObservableObject, Defaults.Serializable {
 
   var status: Status?
 
-  static func updateAll() async {
-    for printer in Defaults[.printers] {
-      await printer.updateStatus()
+  var connection: Connection {
+    switch self.flavor {
+    case .duet:
+      return Duet(host: self.host)
+    case .octoprint:
+      return Octoprint(host: self.host, apiKey: self.apiKey)
+    default:
+      fatalError("Unhandled flavor")
     }
+  }
+
+  var isValid: Bool {
+    return self.name != "" && self.host != ""
+  }
+
+  var isEmpty: Bool {
+    return self.name == "" && self.host == "" && self.apiKey == ""
   }
 
   init() {}
@@ -45,16 +64,7 @@ class Printer: Identifiable, Codable, ObservableObject, Defaults.Serializable {
   }
 
   func updateStatus() async {
-    switch self.flavor {
-    case .duet:
-      let duet = Duet(host: self.host)
-      self.status = try! await duet.status()
-    case .octoprint:
-      let octoprint = Octoprint(host: self.host, apiKey: self.apiKey)
-      self.status = try! await octoprint.status()
-    default:
-      fatalError("Unhandled flavor")
-    }
+    self.status = try! await self.connection.status()
   }
 
   func save() {

@@ -8,70 +8,87 @@
 import Defaults
 import SwiftUI
 
+struct TestDetails {
+  let result: String
+}
+
 struct EditPrinter: View {
   @ObservedObject var printer: Printer
   @Environment(\.hostingWindow) var hostingWindow
+  @State private var isAlert = false
+  @State var details: TestDetails?
 
   func cancel() {
     self.hostingWindow()?.close()
   }
 
   func save() {
-    printer.save()
-    self.hostingWindow()?.close()
+    if printer.isValid {
+      printer.save()
+      self.hostingWindow()?.close()
+    } else if printer.isEmpty {
+      self.hostingWindow()?.close()
+    }
+  }
+
+  func test() {
+    Task.init {
+      let isConnected = await printer.connection.test()
+      if isConnected {
+        self.details = TestDetails(
+          result: "Success!\nConnection to \(printer.flavor.name) works correctly.")
+      } else {
+        self.details = TestDetails(
+          result:
+            "Could not connect to \(printer.flavor.name).\nPlease check your settings and try again."
+        )
+      }
+      self.isAlert = true
+    }
   }
 
   var body: some View {
-    VStack(alignment: .leading) {
-      Group {
-        Text("Name")
-          .font(.callout)
-          .bold()
-        TextField("My printer", text: $printer.name)
+    Form {
+      Section(header: Text("Printer").font(.callout).bold()) {
+
+        TextField("Name", text: $printer.name)
           .textFieldStyle(RoundedBorderTextFieldStyle())
-
-        Spacer().frame(height: 16)
-      }
-      Group {
-        Text("Printer Type")
-          .font(.callout)
-          .bold()
-
         Picker("Printer Type", selection: $printer.flavor) {
           Text("Duet").tag(Flavor.duet)
           Text("OctoPrint").tag(Flavor.octoprint)
-          // Text("Repetier").tag(Flavor.repetier)
         }
-        .labelsHidden()
 
-        Spacer().frame(height: 16)
-      }
-      Group {
-
-        Text("Hostname, IP, or URL")
-          .font(.callout)
-          .bold()
-        TextField("http://printer.local", text: $printer.host)
+        HStack {
+          TextField(
+            "Hostname, IP, or URL", text: $printer.host,
+            prompt: Text("http://printer.local or 192.168.1.1")
+          )
           .textFieldStyle(RoundedBorderTextFieldStyle())
 
-        Spacer().frame(height: 16)
+          Button("Test", action: test)
+            .alert("Test Results", isPresented: $isAlert, presenting: self.details) { details in
+              Button("OK", role: .cancel) {}
+            } message: { details in
+              Text(details.result)
+            }
+        }
 
-        Text("API Key")
-          .font(.callout)
-          .bold()
         TextField("API Key", text: $printer.apiKey)
           .textFieldStyle(RoundedBorderTextFieldStyle())
       }
 
-      HStack {
-        Spacer()
-        Button("Cancel", role: .destructive, action: cancel)
-        Button("Save", action: save)
+      Section {
+        HStack {
+          Spacer()
+          Button("Cancel", role: .cancel, action: cancel)
+          Button("OK", action: save)
+            .keyboardShortcut(.defaultAction)
+        }
+        .padding()
       }
-      .padding()
     }
     .padding()
-    .frame(minWidth: 400, minHeight: 300)
+    .frame(minWidth: 400)
   }
 }
 

@@ -10,7 +10,7 @@ import Percentage
 import SwiftyJSON
 
 // TODO(ibash) use a common interface for Duet, Octoprint, etc
-class Octoprint {
+class Octoprint: Connection {
 
   private var url: URL
   private var apiKey: String?
@@ -57,6 +57,21 @@ class Octoprint {
     self.apiKey = apiKey
   }
 
+  func test() async -> Bool {
+    let request = URLRequest(url: self.url)
+    var isConnected = false
+
+    do {
+      let (data, _) = try await URLSession.shared.data(for: request)
+      let _ = try! JSON(data: data)
+      isConnected = true
+    } catch _ {
+      // ignored
+    }
+
+    return isConnected
+  }
+
   func status() async throws -> Status {
     var request = URLRequest(url: self.url)
     if let apiKey = self.apiKey {
@@ -66,7 +81,7 @@ class Octoprint {
     var json: JSON
 
     do {
-      let (data, response) = try await URLSession.shared.data(for: request)
+      let (data, _) = try await URLSession.shared.data(for: request)
       json = try! JSON(data: data)
     } catch let error as NSError
       where error.domain == NSURLErrorDomain

@@ -30,11 +30,18 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
   )
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
+    NSApp.setActivationPolicy(.accessory)
+
     // Insert code here to initialize your application
     self.mainStatusMenu.delegate = self
 
     self.statusItem.refreshVisibility()
     self.statusItem.statusMenu = self.mainStatusMenu
+
+    // On first run, open the preferences menu
+    if Printer.all.isEmpty {
+      self.openPreferences()
+    }
 
     // runs an update and kicks off a timer
     Task.init {
@@ -58,6 +65,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
   }
 
+  // ref: https://stackoverflow.com/a/66580942
+  func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+    NSApp.setActivationPolicy(.accessory)
+    return false
+  }
+
   func applicationWillTerminate(_ aNotification: Notification) {
     // Insert code here to tear down your application
   }
@@ -68,6 +81,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
   @IBAction
   func preferencesMenuItemActionHandler(_ sender: NSMenuItem) {
+    self.openPreferences()
+  }
+
+  func openPreferences() {
+    NSApp.setActivationPolicy(.regular)
     self.preferencesWindowController.show()
     self.preferencesWindowController.window?.makeKeyAndOrderFront(nil)
   }

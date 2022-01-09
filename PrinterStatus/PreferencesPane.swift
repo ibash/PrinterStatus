@@ -16,11 +16,8 @@ struct PreferencesPane: View {
   @State private var order = [KeyPathComparator(\Printer.name)]
 
   func add() {
-    let storyboard = NSStoryboard(name: "Main", bundle: nil)
-    let controller =
-      storyboard.instantiateController(withIdentifier: "editPrinterWindow") as! NSWindowController
-
-    controller.window!.makeKeyAndOrderFront(nil)
+    let printer = Printer()
+    self.editPrinter(printer: printer)
   }
 
   func editPrinter(printer: Printer) {
