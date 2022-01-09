@@ -25,15 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
           systemSymbolName: "gearshape", accessibilityDescription: "General preferences")!
       ) {
         PreferencesPane()
-      },
-      Preferences.Pane(
-        identifier: Preferences.PaneIdentifier.advanced,
-        title: "Advanced",
-        toolbarIcon: NSImage(
-          systemSymbolName: "gearshape", accessibilityDescription: "General preferences")!
-      ) {
-        PreferencesPane()
-      },
+      }
     ]
   )
 
