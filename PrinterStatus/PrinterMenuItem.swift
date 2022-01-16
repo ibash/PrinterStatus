@@ -57,7 +57,7 @@ class PrinterMenuItem {
   var host: DefinitionListItem
   var status: DefinitionListItem
   var progress: DefinitionListItem
-  var stream: WebViewMenuItem
+  var stream: StreamViewMenuItem
   let separator = NSMenuItem.separator()
 
   init(printer: Printer) {
@@ -68,12 +68,13 @@ class PrinterMenuItem {
     self.status = DefinitionListItem(name: "Status", value: "Offline")
     self.progress = DefinitionListItem(name: "Progress", value: "")
     self.progress.isHidden = true
-    self.stream = WebViewMenuItem()
+    self.stream = StreamViewMenuItem()
+    self.stream.isHidden = false
 
     if printer.stream.isEmpty {
       self.stream.isHidden = true
     } else {
-      self.stream.updateUrl(printer.stream)
+      self.stream.load(printer.stream)
     }
   }
 
@@ -100,7 +101,7 @@ class PrinterMenuItem {
         // just in case the stream url changes... there should be a better way
         // to do this, however the webview only gets updated if the url
         // changes, so okay for now...
-        self.stream.updateUrl(printer.stream)
+        self.stream.load(printer.stream)
       }
 
     case .none,

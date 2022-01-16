@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A610BEA1277E494F00BD493E /* Published+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A610BEA0277E494E00BD493E /* Published+Encodable.swift */; };
-		A610C122278B7E300000B034 /* WebViewMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A610C121278B7E300000B034 /* WebViewMenuItem.swift */; };
 		A61FB551278B6EC500451EAC /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61FB550278B6EC500451EAC /* Connection.swift */; };
 		A62124BB2786C5B1008D8E5A /* HostingWindowKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62124BA2786C5B1008D8E5A /* HostingWindowKey.swift */; };
 		A62FF9CD278689FD00C4367A /* DefinitionListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62FF9CC278689FD00C4367A /* DefinitionListItemView.swift */; };
@@ -28,6 +27,9 @@
 		A6756D72277D7CCB00B58D60 /* Duet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6756D71277D7CCB00B58D60 /* Duet.swift */; };
 		A6756D74277D7D1A00B58D60 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6756D73277D7D1A00B58D60 /* Status.swift */; };
 		A6756D76277D8E3B00B58D60 /* EditPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6756D75277D8E3B00B58D60 /* EditPrinter.swift */; };
+		A67EE7272793C8850055F00D /* MjpegReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67EE7262793C8850055F00D /* MjpegReader.swift */; };
+		A67EE7292793CEFD0055F00D /* StreamViewMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67EE7282793CEFD0055F00D /* StreamViewMenuItem.swift */; };
+		A67EE72B2793F1BD0055F00D /* IsMixedReplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67EE72A2793F1BD0055F00D /* IsMixedReplace.swift */; };
 		A681ADCA277E632100E39FDC /* Percentage in Frameworks */ = {isa = PBXBuildFile; productRef = A681ADC9277E632100E39FDC /* Percentage */; };
 		A6C842D02784EF6E0030F64E /* PrinterMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C842CF2784EF6E0030F64E /* PrinterMenuItem.swift */; };
 		A6DF4ADD277DAFDF0092BC54 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = A6DF4ADC277DAFDF0092BC54 /* SwiftyJSON */; };
@@ -35,7 +37,6 @@
 
 /* Begin PBXFileReference section */
 		A610BEA0277E494E00BD493E /* Published+Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Published+Encodable.swift"; sourceTree = "<group>"; };
-		A610C121278B7E300000B034 /* WebViewMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewMenuItem.swift; sourceTree = "<group>"; };
 		A61FB550278B6EC500451EAC /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		A62124BA2786C5B1008D8E5A /* HostingWindowKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingWindowKey.swift; sourceTree = "<group>"; };
 		A62FF9CC278689FD00C4367A /* DefinitionListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionListItemView.swift; sourceTree = "<group>"; };
@@ -54,6 +55,9 @@
 		A6756D71277D7CCB00B58D60 /* Duet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duet.swift; sourceTree = "<group>"; };
 		A6756D73277D7D1A00B58D60 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		A6756D75277D8E3B00B58D60 /* EditPrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPrinter.swift; sourceTree = "<group>"; };
+		A67EE7262793C8850055F00D /* MjpegReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MjpegReader.swift; sourceTree = "<group>"; };
+		A67EE7282793CEFD0055F00D /* StreamViewMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamViewMenuItem.swift; sourceTree = "<group>"; };
+		A67EE72A2793F1BD0055F00D /* IsMixedReplace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsMixedReplace.swift; sourceTree = "<group>"; };
 		A6C842CF2784EF6E0030F64E /* PrinterMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterMenuItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,26 +97,28 @@
 		A6313CC8277D4052009CF8E7 /* PrinterStatus */ = {
 			isa = PBXGroup;
 			children = (
-				A6756D60277D4E1D00B58D60 /* Info.plist */,
 				A6313CC9277D4052009CF8E7 /* AppDelegate.swift */,
-				A6C842CF2784EF6E0030F64E /* PrinterMenuItem.swift */,
-				A610C121278B7E300000B034 /* WebViewMenuItem.swift */,
-				A62FF9CC278689FD00C4367A /* DefinitionListItemView.swift */,
-				A6756D6C277D519400B58D60 /* PreferencesPaneIdentifier.swift */,
 				A6313CCD277D4054009CF8E7 /* Assets.xcassets */,
-				A6313CCF277D4054009CF8E7 /* Main.storyboard */,
-				A6313CD2277D4054009CF8E7 /* PrinterStatus.entitlements */,
-				A6313CD8277D43A8009CF8E7 /* Printer.swift */,
 				A61FB550278B6EC500451EAC /* Connection.swift */,
-				A610BEA0277E494E00BD493E /* Published+Encodable.swift */,
-				A6313CDA277D44F3009CF8E7 /* Flavor.swift */,
-				A6313CDC277D4844009CF8E7 /* PrinterStatusStatusItem.swift */,
-				A6756D6A277D4F9D00B58D60 /* PreferencesPane.swift */,
-				A6756D75277D8E3B00B58D60 /* EditPrinter.swift */,
-				A62124BA2786C5B1008D8E5A /* HostingWindowKey.swift */,
+				A62FF9CC278689FD00C4367A /* DefinitionListItemView.swift */,
 				A6756D71277D7CCB00B58D60 /* Duet.swift */,
-				A6756D73277D7D1A00B58D60 /* Status.swift */,
+				A6756D75277D8E3B00B58D60 /* EditPrinter.swift */,
+				A6313CDA277D44F3009CF8E7 /* Flavor.swift */,
+				A62124BA2786C5B1008D8E5A /* HostingWindowKey.swift */,
+				A6756D60277D4E1D00B58D60 /* Info.plist */,
+				A6313CCF277D4054009CF8E7 /* Main.storyboard */,
 				A66B9596278AD0CF006EABE4 /* Octoprint.swift */,
+				A67EE7262793C8850055F00D /* MjpegReader.swift */,
+				A6756D6A277D4F9D00B58D60 /* PreferencesPane.swift */,
+				A6756D6C277D519400B58D60 /* PreferencesPaneIdentifier.swift */,
+				A6313CD8277D43A8009CF8E7 /* Printer.swift */,
+				A6C842CF2784EF6E0030F64E /* PrinterMenuItem.swift */,
+				A6313CD2277D4054009CF8E7 /* PrinterStatus.entitlements */,
+				A6313CDC277D4844009CF8E7 /* PrinterStatusStatusItem.swift */,
+				A610BEA0277E494E00BD493E /* Published+Encodable.swift */,
+				A6756D73277D7D1A00B58D60 /* Status.swift */,
+				A67EE7282793CEFD0055F00D /* StreamViewMenuItem.swift */,
+				A67EE72A2793F1BD0055F00D /* IsMixedReplace.swift */,
 			);
 			path = PrinterStatus;
 			sourceTree = "<group>";
@@ -225,9 +231,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A67EE7272793C8850055F00D /* MjpegReader.swift in Sources */,
 				A6756D6B277D4F9D00B58D60 /* PreferencesPane.swift in Sources */,
 				A6756D74277D7D1A00B58D60 /* Status.swift in Sources */,
 				A610BEA1277E494F00BD493E /* Published+Encodable.swift in Sources */,
+				A67EE72B2793F1BD0055F00D /* IsMixedReplace.swift in Sources */,
 				A6C842D02784EF6E0030F64E /* PrinterMenuItem.swift in Sources */,
 				A6313CD9277D43A8009CF8E7 /* Printer.swift in Sources */,
 				A6313CDD277D4844009CF8E7 /* PrinterStatusStatusItem.swift in Sources */,
@@ -238,8 +246,8 @@
 				A6756D76277D8E3B00B58D60 /* EditPrinter.swift in Sources */,
 				A62124BB2786C5B1008D8E5A /* HostingWindowKey.swift in Sources */,
 				A6313CCA277D4052009CF8E7 /* AppDelegate.swift in Sources */,
-				A610C122278B7E300000B034 /* WebViewMenuItem.swift in Sources */,
 				A6756D72277D7CCB00B58D60 /* Duet.swift in Sources */,
+				A67EE7292793CEFD0055F00D /* StreamViewMenuItem.swift in Sources */,
 				A62FF9CD278689FD00C4367A /* DefinitionListItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
