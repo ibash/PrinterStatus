@@ -52,11 +52,14 @@ class Duet: Connection {
     do {
       let (data, _) = try await URLSession.shared.data(for: request)
       json = try! JSON(data: data)
-    } catch let error as NSError
-      where error.domain == NSURLErrorDomain
-      && (error.code == NSURLErrorCannotConnectToHost || error.code == NSURLErrorTimedOut)
-    {
-      return Status(status: .offline)
+    } catch let error as URLError {
+      switch error.code {
+      case .networkConnectionLost,
+        .notConnectedToInternet:
+        return Status(status: .offline)
+      default:
+        throw error
+      }
     }
 
     let status: MachineStatus =
