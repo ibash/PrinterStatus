@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Bugsnag",
+        "repositoryURL": "https://github.com/bugsnag/bugsnag-cocoa",
+        "state": {
+          "branch": "master",
+          "revision": "efe6aa84466a455d6e22b0874b7f51a598073771",
+          "version": null
+        }
+      },
+      {
         "package": "Defaults",
         "repositoryURL": "https://github.com/sindresorhus/Defaults",
         "state": {
@@ -44,15 +53,6 @@
           "branch": null,
           "revision": "b3dcd7dbd0d488e1a7077cb33b00f2083e382f07",
           "version": "5.0.1"
-        }
-      },
-      {
-        "package": "TermiNetwork",
-        "repositoryURL": "https://github.com/billp/TermiNetwork",
-        "state": {
-          "branch": null,
-          "revision": "17ec89481e2b0b2411f5a16d58ba9d6149af83d0",
-          "version": "3.0.0"
         }
       }
     ]

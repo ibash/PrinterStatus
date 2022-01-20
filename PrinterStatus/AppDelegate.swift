@@ -5,6 +5,7 @@
 //  Created by Islam Sharabash on 12/29/21.
 //
 
+import Bugsnag
 import Cocoa
 import Preferences
 
@@ -30,6 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
   )
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
+    Bugsnag.start()
     NSApp.setActivationPolicy(.accessory)
 
     // Insert code here to initialize your application
