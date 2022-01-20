@@ -7,7 +7,6 @@
 
 import Bugsnag
 import Cocoa
-import Preferences
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
@@ -15,20 +14,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
   private let statusItem = PrinterStatusStatusItem.instance
   private var printerMenuItems: [UUID: PrinterMenuItem] = [:]
 
-  @IBOutlet weak var mainStatusMenu: NSMenu!
+  private lazy var preferencesWindowController: NSWindowController = {
+    let storyboard = NSStoryboard(name: "Main", bundle: nil)
+    let controller =
+      storyboard.instantiateController(withIdentifier: "preferences") as! NSWindowController
+    return controller
+  }()
 
-  private lazy var preferencesWindowController = PreferencesWindowController(
-    panes: [
-      Preferences.Pane(
-        identifier: Preferences.PaneIdentifier.general,
-        title: "General",
-        toolbarIcon: NSImage(
-          systemSymbolName: "gearshape", accessibilityDescription: "General preferences")!
-      ) {
-        PreferencesPane()
-      }
-    ]
-  )
+  @IBOutlet weak var mainStatusMenu: NSMenu!
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     Bugsnag.start()
@@ -101,7 +94,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
   func openPreferences() {
     NSApp.setActivationPolicy(.regular)
-    self.preferencesWindowController.show()
+
+    NSApplication.shared.activate(ignoringOtherApps: true)
+    self.preferencesWindowController.showWindow(nil)
     self.preferencesWindowController.window?.makeKeyAndOrderFront(nil)
   }
 

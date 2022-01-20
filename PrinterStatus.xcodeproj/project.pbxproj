@@ -17,19 +17,21 @@
 		A6313CD9277D43A8009CF8E7 /* Printer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6313CD8277D43A8009CF8E7 /* Printer.swift */; };
 		A6313CDB277D44F3009CF8E7 /* Flavor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6313CDA277D44F3009CF8E7 /* Flavor.swift */; };
 		A6313CDD277D4844009CF8E7 /* PrinterStatusStatusItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6313CDC277D4844009CF8E7 /* PrinterStatusStatusItem.swift */; };
+		A65B02082799E32B002CB049 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = A65B02072799E32B002CB049 /* PinLayout */; };
+		A65B020A2799F06E002CB049 /* EditPrinterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B02092799F06E002CB049 /* EditPrinterViewController.swift */; };
+		A65B020E2799FFCC002CB049 /* EditPrinterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B020D2799FFCC002CB049 /* EditPrinterView.swift */; };
+		A65B0210279A0177002CB049 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B020F279A0177002CB049 /* PreferencesView.swift */; };
 		A66B9597278AD0CF006EABE4 /* Octoprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66B9596278AD0CF006EABE4 /* Octoprint.swift */; };
-		A6756D63277D4F0A00B58D60 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = A6756D62277D4F0A00B58D60 /* Preferences */; };
+		A66BB9872799011E007C29CE /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66BB9862799011E007C29CE /* PreferencesViewController.swift */; };
 		A6756D66277D4F2600B58D60 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = A6756D65277D4F2600B58D60 /* Defaults */; };
 		A6756D69277D4F8F00B58D60 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = A6756D68277D4F8F00B58D60 /* LaunchAtLogin */; };
-		A6756D6B277D4F9D00B58D60 /* PreferencesPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6756D6A277D4F9D00B58D60 /* PreferencesPane.swift */; };
-		A6756D6D277D519400B58D60 /* PreferencesPaneIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6756D6C277D519400B58D60 /* PreferencesPaneIdentifier.swift */; };
 		A6756D72277D7CCB00B58D60 /* Duet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6756D71277D7CCB00B58D60 /* Duet.swift */; };
 		A6756D74277D7D1A00B58D60 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6756D73277D7D1A00B58D60 /* Status.swift */; };
-		A6756D76277D8E3B00B58D60 /* EditPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6756D75277D8E3B00B58D60 /* EditPrinter.swift */; };
 		A67EE7272793C8850055F00D /* MjpegReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67EE7262793C8850055F00D /* MjpegReader.swift */; };
 		A67EE7292793CEFD0055F00D /* StreamViewMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67EE7282793CEFD0055F00D /* StreamViewMenuItem.swift */; };
 		A67EE72B2793F1BD0055F00D /* IsMixedReplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67EE72A2793F1BD0055F00D /* IsMixedReplace.swift */; };
 		A681ADCA277E632100E39FDC /* Percentage in Frameworks */ = {isa = PBXBuildFile; productRef = A681ADC9277E632100E39FDC /* Percentage */; };
+		A68A42C9279A3A170074DCE9 /* URLSession+fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68A42C8279A3A170074DCE9 /* URLSession+fetch.swift */; };
 		A6B26D572798E6FA00E72D64 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B26D562798E6FA00E72D64 /* Application.swift */; };
 		A6B26D5A2798E74500E72D64 /* Bugsnag in Frameworks */ = {isa = PBXBuildFile; productRef = A6B26D592798E74500E72D64 /* Bugsnag */; };
 		A6B26D5C2798E74500E72D64 /* BugsnagNetworkRequestPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = A6B26D5B2798E74500E72D64 /* BugsnagNetworkRequestPlugin */; };
@@ -50,16 +52,18 @@
 		A6313CD8277D43A8009CF8E7 /* Printer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Printer.swift; sourceTree = "<group>"; };
 		A6313CDA277D44F3009CF8E7 /* Flavor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flavor.swift; sourceTree = "<group>"; };
 		A6313CDC277D4844009CF8E7 /* PrinterStatusStatusItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterStatusStatusItem.swift; sourceTree = "<group>"; };
+		A65B02092799F06E002CB049 /* EditPrinterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPrinterViewController.swift; sourceTree = "<group>"; };
+		A65B020D2799FFCC002CB049 /* EditPrinterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPrinterView.swift; sourceTree = "<group>"; };
+		A65B020F279A0177002CB049 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		A66B9596278AD0CF006EABE4 /* Octoprint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Octoprint.swift; sourceTree = "<group>"; };
+		A66BB9862799011E007C29CE /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		A6756D60277D4E1D00B58D60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		A6756D6A277D4F9D00B58D60 /* PreferencesPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesPane.swift; sourceTree = "<group>"; };
-		A6756D6C277D519400B58D60 /* PreferencesPaneIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesPaneIdentifier.swift; sourceTree = "<group>"; };
 		A6756D71277D7CCB00B58D60 /* Duet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duet.swift; sourceTree = "<group>"; };
 		A6756D73277D7D1A00B58D60 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
-		A6756D75277D8E3B00B58D60 /* EditPrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPrinter.swift; sourceTree = "<group>"; };
 		A67EE7262793C8850055F00D /* MjpegReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MjpegReader.swift; sourceTree = "<group>"; };
 		A67EE7282793CEFD0055F00D /* StreamViewMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamViewMenuItem.swift; sourceTree = "<group>"; };
 		A67EE72A2793F1BD0055F00D /* IsMixedReplace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsMixedReplace.swift; sourceTree = "<group>"; };
+		A68A42C8279A3A170074DCE9 /* URLSession+fetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+fetch.swift"; sourceTree = "<group>"; };
 		A6B26D562798E6FA00E72D64 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		A6C842CF2784EF6E0030F64E /* PrinterMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterMenuItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,8 +77,8 @@
 				A6756D69277D4F8F00B58D60 /* LaunchAtLogin in Frameworks */,
 				A6756D66277D4F2600B58D60 /* Defaults in Frameworks */,
 				A681ADCA277E632100E39FDC /* Percentage in Frameworks */,
-				A6756D63277D4F0A00B58D60 /* Preferences in Frameworks */,
 				A6B26D5C2798E74500E72D64 /* BugsnagNetworkRequestPlugin in Frameworks */,
+				A65B02082799E32B002CB049 /* PinLayout in Frameworks */,
 				A6DF4ADD277DAFDF0092BC54 /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,7 +111,9 @@
 				A61FB550278B6EC500451EAC /* Connection.swift */,
 				A62FF9CC278689FD00C4367A /* DefinitionListItemView.swift */,
 				A6756D71277D7CCB00B58D60 /* Duet.swift */,
-				A6756D75277D8E3B00B58D60 /* EditPrinter.swift */,
+				A68A42C8279A3A170074DCE9 /* URLSession+fetch.swift */,
+				A65B020D2799FFCC002CB049 /* EditPrinterView.swift */,
+				A65B02092799F06E002CB049 /* EditPrinterViewController.swift */,
 				A6313CDA277D44F3009CF8E7 /* Flavor.swift */,
 				A62124BA2786C5B1008D8E5A /* HostingWindowKey.swift */,
 				A6756D60277D4E1D00B58D60 /* Info.plist */,
@@ -115,8 +121,8 @@
 				A6313CCF277D4054009CF8E7 /* Main.storyboard */,
 				A67EE7262793C8850055F00D /* MjpegReader.swift */,
 				A66B9596278AD0CF006EABE4 /* Octoprint.swift */,
-				A6756D6A277D4F9D00B58D60 /* PreferencesPane.swift */,
-				A6756D6C277D519400B58D60 /* PreferencesPaneIdentifier.swift */,
+				A65B020F279A0177002CB049 /* PreferencesView.swift */,
+				A66BB9862799011E007C29CE /* PreferencesViewController.swift */,
 				A6313CD8277D43A8009CF8E7 /* Printer.swift */,
 				A6C842CF2784EF6E0030F64E /* PrinterMenuItem.swift */,
 				A6313CD2277D4054009CF8E7 /* PrinterStatus.entitlements */,
@@ -146,13 +152,13 @@
 			);
 			name = PrinterStatus;
 			packageProductDependencies = (
-				A6756D62277D4F0A00B58D60 /* Preferences */,
 				A6756D65277D4F2600B58D60 /* Defaults */,
 				A6756D68277D4F8F00B58D60 /* LaunchAtLogin */,
 				A6DF4ADC277DAFDF0092BC54 /* SwiftyJSON */,
 				A681ADC9277E632100E39FDC /* Percentage */,
 				A6B26D592798E74500E72D64 /* Bugsnag */,
 				A6B26D5B2798E74500E72D64 /* BugsnagNetworkRequestPlugin */,
+				A65B02072799E32B002CB049 /* PinLayout */,
 			);
 			productName = PrinterStatus;
 			productReference = A6313CC6277D4052009CF8E7 /* PrinterStatus.app */;
@@ -183,12 +189,12 @@
 			);
 			mainGroup = A6313CBD277D4052009CF8E7;
 			packageReferences = (
-				A6756D61277D4F0A00B58D60 /* XCRemoteSwiftPackageReference "Preferences" */,
 				A6756D64277D4F2600B58D60 /* XCRemoteSwiftPackageReference "Defaults" */,
 				A6756D67277D4F8F00B58D60 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
 				A6DF4ADB277DAFDF0092BC54 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				A681ADC8277E632100E39FDC /* XCRemoteSwiftPackageReference "Percentage" */,
 				A6B26D582798E74500E72D64 /* XCRemoteSwiftPackageReference "bugsnag-cocoa" */,
+				A65B02062799E32B002CB049 /* XCRemoteSwiftPackageReference "PinLayout" */,
 			);
 			productRefGroup = A6313CC7277D4052009CF8E7 /* Products */;
 			projectDirPath = "";
@@ -238,21 +244,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				A67EE7272793C8850055F00D /* MjpegReader.swift in Sources */,
-				A6756D6B277D4F9D00B58D60 /* PreferencesPane.swift in Sources */,
+				A65B020E2799FFCC002CB049 /* EditPrinterView.swift in Sources */,
 				A6756D74277D7D1A00B58D60 /* Status.swift in Sources */,
 				A6B26D572798E6FA00E72D64 /* Application.swift in Sources */,
 				A610BEA1277E494F00BD493E /* Published+Encodable.swift in Sources */,
+				A66BB9872799011E007C29CE /* PreferencesViewController.swift in Sources */,
 				A67EE72B2793F1BD0055F00D /* IsMixedReplace.swift in Sources */,
 				A6C842D02784EF6E0030F64E /* PrinterMenuItem.swift in Sources */,
 				A6313CD9277D43A8009CF8E7 /* Printer.swift in Sources */,
 				A6313CDD277D4844009CF8E7 /* PrinterStatusStatusItem.swift in Sources */,
+				A65B020A2799F06E002CB049 /* EditPrinterViewController.swift in Sources */,
 				A6313CDB277D44F3009CF8E7 /* Flavor.swift in Sources */,
 				A61FB551278B6EC500451EAC /* Connection.swift in Sources */,
-				A6756D6D277D519400B58D60 /* PreferencesPaneIdentifier.swift in Sources */,
+				A65B0210279A0177002CB049 /* PreferencesView.swift in Sources */,
 				A66B9597278AD0CF006EABE4 /* Octoprint.swift in Sources */,
-				A6756D76277D8E3B00B58D60 /* EditPrinter.swift in Sources */,
 				A62124BB2786C5B1008D8E5A /* HostingWindowKey.swift in Sources */,
 				A6313CCA277D4052009CF8E7 /* AppDelegate.swift in Sources */,
+				A68A42C9279A3A170074DCE9 /* URLSession+fetch.swift in Sources */,
 				A6756D72277D7CCB00B58D60 /* Duet.swift in Sources */,
 				A67EE7292793CEFD0055F00D /* StreamViewMenuItem.swift in Sources */,
 				A62FF9CD278689FD00C4367A /* DefinitionListItemView.swift in Sources */,
@@ -410,6 +418,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.ibash.PrinterStatus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -440,6 +449,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.ibash.PrinterStatus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -472,12 +482,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A6756D61277D4F0A00B58D60 /* XCRemoteSwiftPackageReference "Preferences" */ = {
+		A65B02062799E32B002CB049 /* XCRemoteSwiftPackageReference "PinLayout" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sindresorhus/Preferences";
+			repositoryURL = "https://github.com/layoutBox/PinLayout";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 		A6756D64277D4F2600B58D60 /* XCRemoteSwiftPackageReference "Defaults" */ = {
@@ -523,10 +533,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A6756D62277D4F0A00B58D60 /* Preferences */ = {
+		A65B02072799E32B002CB049 /* PinLayout */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A6756D61277D4F0A00B58D60 /* XCRemoteSwiftPackageReference "Preferences" */;
-			productName = Preferences;
+			package = A65B02062799E32B002CB049 /* XCRemoteSwiftPackageReference "PinLayout" */;
+			productName = PinLayout;
 		};
 		A6756D65277D4F2600B58D60 /* Defaults */ = {
 			isa = XCSwiftPackageProductDependency;

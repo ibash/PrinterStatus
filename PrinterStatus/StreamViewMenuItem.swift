@@ -64,7 +64,7 @@ class StreamViewMenuItem {
   }
 
   func initMjpegReader() {
-    let image = NSImage(named: NSImage.folderName)!
+    let image = NSImage()
     let view = NSImageView(image: image)
     view.frame = NSRect(x: 0, y: 0, width: 640, height: 480)
     self.view = view

@@ -38,12 +38,12 @@
         }
       },
       {
-        "package": "Preferences",
-        "repositoryURL": "https://github.com/sindresorhus/Preferences",
+        "package": "PinLayout",
+        "repositoryURL": "https://github.com/layoutBox/PinLayout",
         "state": {
-          "branch": "main",
-          "revision": "ffeaaad1def45d0625720dc1adae3789cd9c167d",
-          "version": null
+          "branch": null,
+          "revision": "93feb9f10c669033b52e6fd9589152036fcbd809",
+          "version": "1.10.0"
         }
       },
       {

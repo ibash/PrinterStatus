@@ -31,11 +31,11 @@ class Duet: Connection {
   }
 
   func test() async -> Bool {
-    let request = URLRequest(url: self.url)
+    let request = URLRequest(url: self.url, timeoutInterval: 10)
     var isConnected = false
 
     do {
-      let (data, _) = try await URLSession.shared.data(for: request)
+      let (data, _) = try await URLSession.shared.fetch(request)
       let _ = try! JSON(data: data)
       isConnected = true
     } catch _ {
@@ -50,7 +50,7 @@ class Duet: Connection {
     var json: JSON
 
     do {
-      let (data, _) = try await URLSession.shared.data(for: request)
+      let (data, _) = try await URLSession.shared.fetch(request)
       json = try! JSON(data: data)
     } catch let error as URLError {
       switch error.code {
