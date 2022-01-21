@@ -52,7 +52,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
           body: { group in
             for printer in printers {
               group.addTask {
-                try! await printer.updateStatus()
+                await printer.updateStatus()
                 DispatchQueue.main.async {
                   self.updateMenuForPrinter(printer)
                 }

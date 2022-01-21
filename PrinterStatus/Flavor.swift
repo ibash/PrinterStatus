@@ -16,8 +16,7 @@ enum Flavor: String, Codable {
 
   var name: String {
     switch self {
-    // TODO(ibash) rename duet to duet SBC or the like
-    case .duet: return "Duet"
+    case .duet: return "Duet3 SBC"
     case .rrf: return "RepRapFirmware"
     case .klipper: return "Klipper"
     case .octoprint: return "OctoPrint"

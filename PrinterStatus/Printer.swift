@@ -5,6 +5,7 @@
 //  Created by Islam Sharabash on 12/29/21.
 //
 
+import Bugsnag
 import Defaults
 import Foundation
 
@@ -12,12 +13,6 @@ class Printer: Identifiable, Codable, ObservableObject, Defaults.Serializable {
 
   static var all: [Printer] {
     Defaults[.printers]
-  }
-
-  static func updateAll() async {
-    for printer in Defaults[.printers] {
-      try! await printer.updateStatus()
-    }
   }
 
   @Published var id = UUID()
@@ -71,9 +66,13 @@ class Printer: Identifiable, Codable, ObservableObject, Defaults.Serializable {
     return copy
   }
 
-  func updateStatus() async throws {
+  func updateStatus() async {
     // TODO(ibash) handle errors better, maybe lift url errors up to here
-    self.status = try await self.connection.status()
+    do {
+      self.status = try await self.connection.status()
+    } catch {
+      Bugsnag.notifyError(error)
+    }
   }
 
   func save() {

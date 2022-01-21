@@ -5,6 +5,7 @@
 //  Created by Islam Sharabash on 1/20/22.
 //
 
+import Bugsnag
 import Foundation
 import Percentage
 import SwiftyJSON
@@ -124,8 +125,9 @@ class RepRapFirmware: Connection {
       // err = 1 means the password is wrong
       // err = 2 means there are too many sessions
 
-    } catch _ {
+    } catch {
       // ignored
+      Bugsnag.notifyError(error)
     }
 
     return isConnected
@@ -138,8 +140,9 @@ class RepRapFirmware: Connection {
     do {
       let request = URLRequest(url: self.disconnectUrl, timeoutInterval: 10)
       let _ = try await URLSession.shared.fetch(request)
-    } catch _ {
+    } catch {
       // ignored
+      Bugsnag.notifyError(error)
     }
   }
 }
