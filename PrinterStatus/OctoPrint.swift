@@ -5,6 +5,7 @@
 //  Created by Islam Sharabash on 1/9/22.
 //
 
+import Bugsnag
 import Foundation
 import Percentage
 import SwiftyJSON
@@ -64,8 +65,9 @@ class OctoPrint: Connection {
       let (data, _) = try await URLSession.shared.fetch(request)
       let _ = try JSON(data: data)
       isConnected = true
-    } catch _ {
+    } catch {
       // ignored
+      Bugsnag.notifyError(error)
     }
 
     return isConnected

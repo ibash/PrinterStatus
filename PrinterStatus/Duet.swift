@@ -5,6 +5,7 @@
 //  Created by Islam Sharabash on 12/29/21.
 //
 
+import Bugsnag
 import Foundation
 import Percentage
 import SwiftyJSON
@@ -38,8 +39,9 @@ class Duet: Connection {
       let (data, _) = try await URLSession.shared.fetch(request)
       let _ = try JSON(data: data)
       isConnected = true
-    } catch _ {
+    } catch {
       // ignored
+      Bugsnag.notifyError(error)
     }
 
     return isConnected
