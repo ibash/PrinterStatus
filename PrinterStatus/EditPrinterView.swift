@@ -31,11 +31,11 @@ class EditPrinterView: NSView {
   override func layout() {
     super.layout()
 
-    self.nameField.pin.top(16).hCenter(60).width(120)
-    self.flavorField.pin.below(of: self.nameField, aligned: .start).width(120).marginTop(8)
-    self.hostField.pin.below(of: self.flavorField, aligned: .start).width(120).marginTop(8)
-    self.apiKeyField.pin.below(of: self.hostField, aligned: .start).width(120).marginTop(8)
-    self.streamField.pin.below(of: self.apiKeyField, aligned: .start).width(120).marginTop(8)
+    self.nameField.pin.top(16).hCenter(60).width(220)
+    self.flavorField.pin.below(of: self.nameField, aligned: .start).width(220).marginTop(8)
+    self.hostField.pin.below(of: self.flavorField, aligned: .start).width(220).marginTop(8)
+    self.apiKeyField.pin.below(of: self.hostField, aligned: .start).width(220).marginTop(8)
+    self.streamField.pin.below(of: self.apiKeyField, aligned: .start).width(220).marginTop(8)
 
     self.nameLabel.pin.before(of: self.nameField, aligned: .center).marginEnd(8)
     self.flavorLabel.pin.before(of: self.flavorField, aligned: .center).marginEnd(8)

@@ -1035,9 +1035,9 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ke-jx-Mfc">
-                                <rect key="frame" x="131" y="89" width="51" height="16"/>
+                                <rect key="frame" x="131" y="89" width="128" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="API Key" id="9nw-FZ-v2b">
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="API Key or Password" id="9nw-FZ-v2b">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

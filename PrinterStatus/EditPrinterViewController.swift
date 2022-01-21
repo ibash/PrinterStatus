@@ -30,7 +30,7 @@ class EditPrinterViewController: NSViewController {
     }
   }
 
-  let flavors: [Flavor] = [.duet, .octoprint]
+  let flavors: [Flavor] = [.duet, .octoprint, .rrf]
 
   @IBAction func test(_ sender: Any) {
     guard let printer = self.printer else {

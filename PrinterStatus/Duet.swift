@@ -36,7 +36,7 @@ class Duet: Connection {
 
     do {
       let (data, _) = try await URLSession.shared.fetch(request)
-      let _ = try! JSON(data: data)
+      let _ = try JSON(data: data)
       isConnected = true
     } catch _ {
       // ignored
@@ -51,7 +51,7 @@ class Duet: Connection {
 
     do {
       let (data, _) = try await URLSession.shared.fetch(request)
-      json = try! JSON(data: data)
+      json = try JSON(data: data)
     } catch let error as URLError {
       switch error.code {
       case .networkConnectionLost,

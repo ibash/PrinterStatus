@@ -1,5 +1,5 @@
 //
-//  Octoprint.swift
+//  OctoPrint.swift
 //  PrinterStatus
 //
 //  Created by Islam Sharabash on 1/9/22.
@@ -9,8 +9,7 @@ import Foundation
 import Percentage
 import SwiftyJSON
 
-// TODO(ibash) use a common interface for Duet, Octoprint, etc
-class Octoprint: Connection {
+class OctoPrint: Connection {
 
   private var url: URL
   private var apiKey: String?
@@ -63,7 +62,7 @@ class Octoprint: Connection {
 
     do {
       let (data, _) = try await URLSession.shared.fetch(request)
-      let _ = try! JSON(data: data)
+      let _ = try JSON(data: data)
       isConnected = true
     } catch _ {
       // ignored
@@ -82,7 +81,7 @@ class Octoprint: Connection {
 
     do {
       let (data, _) = try await URLSession.shared.fetch(request)
-      json = try! JSON(data: data)
+      json = try JSON(data: data)
     } catch let error as URLError {
       switch error.code {
       case .networkConnectionLost,
