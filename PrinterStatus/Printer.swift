@@ -16,7 +16,7 @@ class Printer: Identifiable, Codable, ObservableObject, Defaults.Serializable {
 
   static func updateAll() async {
     for printer in Defaults[.printers] {
-      await printer.updateStatus()
+      try! await printer.updateStatus()
     }
   }
 
@@ -25,6 +25,7 @@ class Printer: Identifiable, Codable, ObservableObject, Defaults.Serializable {
   @Published var name: String = ""
   // hostname, ip, or url
   @Published var host: String = ""
+  // TODO(ibash) rename apiKey to password
   @Published var apiKey: String = ""
   @Published var stream: String = ""
 
@@ -35,7 +36,9 @@ class Printer: Identifiable, Codable, ObservableObject, Defaults.Serializable {
     case .duet:
       return Duet(host: self.host)
     case .octoprint:
-      return Octoprint(host: self.host, apiKey: self.apiKey)
+      return OctoPrint(host: self.host, apiKey: self.apiKey)
+    case .rrf:
+      return RepRapFirmware(host: self.host, password: self.apiKey)
     default:
       fatalError("Unhandled flavor")
     }
@@ -68,9 +71,9 @@ class Printer: Identifiable, Codable, ObservableObject, Defaults.Serializable {
     return copy
   }
 
-  func updateStatus() async {
+  func updateStatus() async throws {
     // TODO(ibash) handle errors better, maybe lift url errors up to here
-    self.status = try! await self.connection.status()
+    self.status = try await self.connection.status()
   }
 
   func save() {
