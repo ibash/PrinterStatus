@@ -57,7 +57,8 @@ class Duet: Connection {
     } catch let error as URLError {
       switch error.code {
       case .networkConnectionLost,
-        .notConnectedToInternet:
+        .notConnectedToInternet,
+        .timedOut:
         return Status(status: .offline)
       default:
         throw error
