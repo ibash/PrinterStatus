@@ -67,7 +67,6 @@ class Printer: Identifiable, Codable, ObservableObject, Defaults.Serializable {
   }
 
   func updateStatus() async {
-    // TODO(ibash) handle errors better, maybe lift url errors up to here
     do {
       self.status = try await self.connection.status()
     } catch {

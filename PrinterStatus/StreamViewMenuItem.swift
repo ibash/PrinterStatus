@@ -5,6 +5,7 @@
 //  Created by Islam Sharabash on 1/15/22.
 //
 
+import Bugsnag
 import Cocoa
 import Foundation
 import WebKit
@@ -72,8 +73,7 @@ class StreamViewMenuItem {
 
     self.reader = MjpegReader(self.url!) { image, error in
       if let error = error {
-        // TODO(ibash) handle error
-        // print(error.localizedDescription)
+        Bugsnag.notifyError(error)
       }
       if let image = image {
         DispatchQueue.main.async {

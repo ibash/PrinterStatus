@@ -5,6 +5,7 @@
 //  Created by Islam Sharabash on 1/15/22.
 //
 
+import Bugsnag
 import Foundation
 
 // ref: https://gist.github.com/standinga/08cc70fb40fe0d99b765869c80a90e2b
@@ -84,9 +85,11 @@ class MjpegReader: NSObject, URLSessionDelegate, URLSessionDataDelegate {
         .timedOut:
         self.retry()
       default:
-        // TODO(ibash) handle this
+        Bugsnag.notifyError(error)
         break
       }
+    } else if let error = error {
+      Bugsnag.notifyError(error)
     }
   }
 
