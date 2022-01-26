@@ -80,7 +80,8 @@ class RepRapFirmware: Connection {
       json = try JSON(data: data)
     } catch let error as URLError {
       switch error.code {
-      case .networkConnectionLost,
+      case .cannotConnectToHost,
+        .networkConnectionLost,
         .notConnectedToInternet,
         .timedOut:
         return Status(status: .offline)

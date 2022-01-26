@@ -80,7 +80,8 @@ class MjpegReader: NSObject, URLSessionDelegate, URLSessionDataDelegate {
 
     if let error = error as? URLError {
       switch error.code {
-      case .networkConnectionLost,
+      case .cannotConnectToHost,
+        .networkConnectionLost,
         .notConnectedToInternet,
         .timedOut:
         self.retry()
