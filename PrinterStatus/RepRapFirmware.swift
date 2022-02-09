@@ -10,6 +10,22 @@ import Foundation
 import Percentage
 import SwiftyJSON
 
+enum RepRapFirmwareError: Error {
+  case emptyData
+}
+
+extension RepRapFirmwareError: LocalizedError {
+  var errorDescription: String? {
+    switch self {
+    case .emptyData:
+      return NSLocalizedString(
+        "Data from response is empty",
+        comment: ""
+      )
+    }
+  }
+}
+
 // reprapfirmware is an oddball, some notes:
 // - Sessions last 8 seconds -- if a request isn't made every 8 seconds the
 //   session is automatically cleared
@@ -76,7 +92,25 @@ class RepRapFirmware: Connection {
 
     do {
       let request = URLRequest(url: self.statusUrl)
-      let (data, _) = try await URLSession.shared.fetch(request)
+      let (data, response) = try await URLSession.shared.fetch(request)
+
+      if data.isEmpty {
+        Bugsnag.notifyError(RepRapFirmwareError.emptyData) { event in
+          if let response = response as? HTTPURLResponse {
+            event.addMetadata(response.statusCode, key: "status_code", section: "info")
+
+            let json = JSON(response.allHeaderFields)
+            if let rawString = json.rawString() {
+              event.addMetadata(rawString, key: "headers", section: "info")
+            }
+          }
+          return true
+        }
+
+        // not the correct status, but okay while we're debugging
+        return Status(status: .offline)
+      }
+
       json = try JSON(data: data)
     } catch let error as URLError {
       switch error.code {

@@ -73,7 +73,14 @@ class StreamViewMenuItem {
 
     self.reader = MjpegReader(self.url!) { image, error in
       if let error = error {
-        Bugsnag.notifyError(error)
+        Bugsnag.notifyError(error) { event in
+          if case .parseImage(let data) = error {
+            event.addMetadata(data.isEmpty, key: "data_is_empty", section: "info")
+            event.addMetadata(
+              data.hexEncodedString().prefix(120), key: "data_prefix", section: "info")
+          }
+          return true
+        }
       }
       if let image = image {
         DispatchQueue.main.async {

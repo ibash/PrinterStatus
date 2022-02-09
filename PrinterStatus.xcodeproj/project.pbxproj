@@ -28,6 +28,7 @@
 		A6756D69277D4F8F00B58D60 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = A6756D68277D4F8F00B58D60 /* LaunchAtLogin */; };
 		A6756D72277D7CCB00B58D60 /* Duet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6756D71277D7CCB00B58D60 /* Duet.swift */; };
 		A6756D74277D7D1A00B58D60 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6756D73277D7D1A00B58D60 /* Status.swift */; };
+		A67A01C027B435AF0000A4C3 /* Data+HexEncodedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A01BF27B435AF0000A4C3 /* Data+HexEncodedString.swift */; };
 		A67EE7272793C8850055F00D /* MjpegReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67EE7262793C8850055F00D /* MjpegReader.swift */; };
 		A67EE7292793CEFD0055F00D /* StreamViewMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67EE7282793CEFD0055F00D /* StreamViewMenuItem.swift */; };
 		A67EE72B2793F1BD0055F00D /* IsMixedReplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67EE72A2793F1BD0055F00D /* IsMixedReplace.swift */; };
@@ -62,6 +63,7 @@
 		A6756D60277D4E1D00B58D60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A6756D71277D7CCB00B58D60 /* Duet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duet.swift; sourceTree = "<group>"; };
 		A6756D73277D7D1A00B58D60 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		A67A01BF27B435AF0000A4C3 /* Data+HexEncodedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+HexEncodedString.swift"; sourceTree = "<group>"; };
 		A67EE7262793C8850055F00D /* MjpegReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MjpegReader.swift; sourceTree = "<group>"; };
 		A67EE7282793CEFD0055F00D /* StreamViewMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamViewMenuItem.swift; sourceTree = "<group>"; };
 		A67EE72A2793F1BD0055F00D /* IsMixedReplace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsMixedReplace.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				A67EE72A2793F1BD0055F00D /* IsMixedReplace.swift */,
 				A6313CCF277D4054009CF8E7 /* Main.storyboard */,
 				A67EE7262793C8850055F00D /* MjpegReader.swift */,
+				A67A01BF27B435AF0000A4C3 /* Data+HexEncodedString.swift */,
 				A66B9596278AD0CF006EABE4 /* OctoPrint.swift */,
 				A65B020F279A0177002CB049 /* PreferencesView.swift */,
 				A66BB9862799011E007C29CE /* PreferencesViewController.swift */,
@@ -273,6 +276,7 @@
 				A67EE72B2793F1BD0055F00D /* IsMixedReplace.swift in Sources */,
 				A6C842D02784EF6E0030F64E /* PrinterMenuItem.swift in Sources */,
 				A6313CD9277D43A8009CF8E7 /* Printer.swift in Sources */,
+				A67A01C027B435AF0000A4C3 /* Data+HexEncodedString.swift in Sources */,
 				A6313CDD277D4844009CF8E7 /* PrinterStatusStatusItem.swift in Sources */,
 				A65B020A2799F06E002CB049 /* EditPrinterViewController.swift in Sources */,
 				A6313CDB277D44F3009CF8E7 /* Flavor.swift in Sources */,

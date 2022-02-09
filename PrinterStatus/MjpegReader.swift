@@ -11,7 +11,25 @@ import Foundation
 // ref: https://gist.github.com/standinga/08cc70fb40fe0d99b765869c80a90e2b
 
 enum MjpegReaderError: Error {
-  case badResponse, parseImage
+  case badResponse
+  case parseImage(Data)
+}
+
+extension MjpegReaderError: LocalizedError {
+  var errorDescription: String? {
+    switch self {
+    case .badResponse:
+      return NSLocalizedString(
+        "Response was either not present or status code was not 200",
+        comment: ""
+      )
+    case .parseImage:
+      return NSLocalizedString(
+        "Unable to parse the jpeg image",
+        comment: ""
+      )
+    }
+  }
 }
 
 class MjpegReader: NSObject, URLSessionDelegate, URLSessionDataDelegate {
@@ -95,20 +113,19 @@ class MjpegReader: NSObject, URLSessionDelegate, URLSessionDataDelegate {
   }
 
   private func parseFrame(_ data: Data) {
-    guard let provider = CGDataProvider.init(data: data as CFData) else {
-      self.handler(nil, .parseImage)
+    guard let provider = CGDataProvider(data: data as CFData) else {
+      self.handler(nil, .parseImage(data))
       return
     }
     guard
-      let image = CGImage.init(
+      let image = CGImage(
         jpegDataProviderSource: provider, decode: nil, shouldInterpolate: true,
         intent: CGColorRenderingIntent.defaultIntent)
     else {
-      self.handler(nil, .parseImage)
+      self.handler(nil, .parseImage(data))
       return
     }
 
     self.handler(image, nil)
   }
-
 }
