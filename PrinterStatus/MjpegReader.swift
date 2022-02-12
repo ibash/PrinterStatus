@@ -33,12 +33,10 @@ extension MjpegReaderError: LocalizedError {
 }
 
 class MjpegReader: NSObject, URLSessionDelegate, URLSessionDataDelegate {
-  let startMarker: Data = Data(bytes: [0xFF, 0xD8])
-  let endMarker: Data = Data(bytes: [0xFF, 0xD9])
-
   let handler: ((CGImage?, MjpegReaderError?) -> Void)
   let url: URL
   var buffer: Data = Data()
+  var cursor: Data.Index
   // session is optional so super.init can be called before session is iniitalized
   var session: URLSession?
   var task: URLSessionDataTask?
@@ -46,6 +44,7 @@ class MjpegReader: NSObject, URLSessionDelegate, URLSessionDataDelegate {
   init(_ url: URL, handler: @escaping (CGImage?, MjpegReaderError?) -> Void) {
     self.url = url
     self.handler = handler
+    self.cursor = self.buffer.startIndex
 
     super.init()
     let session = URLSessionConfiguration.ephemeral
@@ -61,10 +60,17 @@ class MjpegReader: NSObject, URLSessionDelegate, URLSessionDataDelegate {
   func stop() {
     self.task?.cancel()
     self.task = nil
+
+    self.buffer = Data()
+    self.cursor = self.buffer.startIndex
   }
 
   func retry() {
     self.stop()
+
+    self.buffer = Data()
+    self.cursor = self.buffer.startIndex
+
     self.task = self.session?.dataTask(with: self.url)
     self.task?.resume()
   }
@@ -75,19 +81,71 @@ class MjpegReader: NSObject, URLSessionDelegate, URLSessionDataDelegate {
       return
     }
 
-    // SUBTLE(ibash) We only emit a frame when we see the start market for the
-    // _next_ frame. This does mean that the last frame will _never_ be emitted.
-    // But this is a reliable and quick way to parse out jpegs.
-    if data.range(of: self.startMarker) != nil {
-      let data = self.buffer
-      if !data.isEmpty {
-        self.parseFrame(data)
-      }
+    self.buffer.append(data)
 
-      self.buffer = Data()
+    let (end, cursor) = self.findEnd(self.buffer, cursor: self.cursor)
+    if let end = end {
+      let frame = self.buffer.prefix(upTo: end)
+      self.parseFrame(frame)
+      self.buffer = self.buffer.suffix(from: end)
+      self.cursor = self.buffer.startIndex
     }
 
-    self.buffer.append(data)
+    if let cursor = cursor {
+      self.cursor = cursor
+    }
+  }
+
+  // ref: https://stackoverflow.com/a/4614629/418739
+  func findEnd(_ data: Data, cursor: Data.Index) -> (Data.Index?, Data.Index?) {
+    // TODO(ibash) validate that the start is ffd8
+
+    //var cursor = data.startIndex
+    var cursor = cursor
+
+    while true {
+      // find the next marker
+      while cursor < data.endIndex && data[cursor] != 0xFF {
+        cursor += 1
+        continue
+      }
+
+      // markers can have any number of 0xFF padding before them, so skip
+      // padding
+      while (cursor + 1) < data.endIndex && data[cursor + 1] == 0xFF {
+        cursor += 1
+      }
+
+      if (cursor + 1) >= data.endIndex {
+        return (nil, cursor)
+      }
+
+      let marker = data[cursor + 1]
+      switch marker {
+      case 0xD0...0xD8,
+        0x00,
+        0x01:
+        // marker with no length, keep moving
+        cursor += 2
+        continue
+
+      case 0xD9:
+        cursor += 2
+        return (cursor, nil)
+
+      default:
+
+        if cursor + 3 >= data.endIndex {
+          // don't increment the cursor so that we parse at the same
+          // marker next time
+          return (nil, cursor)
+        }
+
+        let bytes = data[(cursor + 1)..<(cursor + 3)]
+        let length = UInt16(bigEndian: bytes.withUnsafeBytes { $0.pointee })
+        cursor += Int(length) + 1
+      }
+    }
   }
 
   func urlSession(
