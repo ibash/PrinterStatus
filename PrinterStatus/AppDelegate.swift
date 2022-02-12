@@ -9,7 +9,10 @@ import Bugsnag
 import Cocoa
 
 @main
-class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate {
+
+  // used by various menu items
+  var isMenuOpen = false
 
   private let statusItem = PrinterStatusStatusItem.instance
   private var printerMenuItems: [UUID: PrinterMenuItem] = [:]
@@ -30,7 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     // Insert code here to initialize your application
     self.mainStatusMenu.delegate = self
 
-    self.statusItem.refreshVisibility()
+    self.statusItem.addToStatusBar()
     self.statusItem.statusMenu = self.mainStatusMenu
 
     // On first run, open the preferences menu
@@ -142,6 +145,22 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         }
         self.printerMenuItems.removeValue(forKey: id)
       }
+    }
+  }
+}
+
+extension AppDelegate: NSMenuDelegate {
+  func menuWillOpen(_ menu: NSMenu) {
+    self.isMenuOpen = true
+    for (_, item) in self.printerMenuItems {
+      item.willOpen()
+    }
+  }
+
+  func menuDidClose(_ menu: NSMenu) {
+    self.isMenuOpen = false
+    for (_, item) in self.printerMenuItems {
+      item.didClose()
     }
   }
 }

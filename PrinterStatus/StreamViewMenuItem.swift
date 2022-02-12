@@ -18,9 +18,11 @@ class StreamViewMenuItem {
       if newValue {
         self.menuItem.view = nil
         self.menuItem.isHidden = true
+        self.pauseOrResume()
       } else {
         self.menuItem.view = self.view
         self.menuItem.isHidden = false
+        self.pauseOrResume()
       }
     }
     get { self.menuItem.view == nil }
@@ -89,7 +91,7 @@ class StreamViewMenuItem {
       }
     }
 
-    self.reader?.start()
+    self.pauseOrResume()
   }
 
   func initWebview() {
@@ -114,5 +116,14 @@ class StreamViewMenuItem {
     components.scheme = components.scheme ?? "http"
     self.url = components.url
     self.checkContentType()
+  }
+
+  func pauseOrResume() {
+    let appDelegate = NSApplication.shared.delegate as! AppDelegate
+    if self.isHidden || !appDelegate.isMenuOpen {
+      self.reader?.stop()
+    } else {
+      self.reader?.start()
+    }
   }
 }

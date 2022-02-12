@@ -9,7 +9,7 @@ import Bugsnag
 import Defaults
 import Foundation
 
-class Printer: Identifiable, Codable, ObservableObject, Defaults.Serializable {
+class Printer: Identifiable, Codable, ObservableObject {
 
   static var all: [Printer] {
     Defaults[.printers]
@@ -89,4 +89,11 @@ class Printer: Identifiable, Codable, ObservableObject, Defaults.Serializable {
 
 extension Defaults.Keys {
   static let printers = Key<[Printer]>("printers", default: [])
+}
+
+// ref: https://github.com/sindresorhus/Defaults/issues/93
+struct MyBridge<Value: Codable>: DefaultsCodableBridge {}
+
+extension Printer: Defaults.Serializable {
+  static let bridge = MyBridge<Printer>()
 }

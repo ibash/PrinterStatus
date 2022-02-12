@@ -69,11 +69,9 @@ class PrinterMenuItem {
     self.progress = DefinitionListItem(name: "Progress", value: "")
     self.progress.isHidden = true
     self.stream = StreamViewMenuItem()
-    self.stream.isHidden = false
+    self.stream.isHidden = true
 
-    if printer.stream.isEmpty {
-      self.stream.isHidden = true
-    } else {
+    if !printer.stream.isEmpty {
       self.stream.load(printer.stream)
     }
   }
@@ -96,7 +94,9 @@ class PrinterMenuItem {
       self.progress.isHidden = false
       self.progress.value = printer.status!.progress.description
 
-      if !printer.stream.isEmpty {
+      if printer.stream.isEmpty {
+        self.stream.isHidden = true
+      } else {
         self.stream.isHidden = false
         // just in case the stream url changes... there should be a better way
         // to do this, however the webview only gets updated if the url
@@ -115,5 +115,13 @@ class PrinterMenuItem {
       self.progress.isHidden = true
       self.stream.isHidden = true
     }
+  }
+
+  func willOpen() {
+    self.stream.pauseOrResume()
+  }
+
+  func didClose() {
+    self.stream.pauseOrResume()
   }
 }
