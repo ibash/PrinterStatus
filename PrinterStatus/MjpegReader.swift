@@ -34,6 +34,7 @@ extension MjpegReaderError: LocalizedError {
 
 class MjpegReader: NSObject, URLSessionDelegate, URLSessionDataDelegate {
   let handler: ((CGImage?, MjpegReaderError?) -> Void)
+  let queue = DispatchQueue(label: "xyz.ibash.PrinterStatus.buffer")
   let url: URL
   var buffer: Data = Data()
   var cursor: Data.Index
@@ -58,21 +59,26 @@ class MjpegReader: NSObject, URLSessionDelegate, URLSessionDataDelegate {
   }
 
   func stop() {
-    self.task?.cancel()
-    self.task = nil
+    self.queue.sync {
+      self.task?.cancel()
+      self.task = nil
 
-    self.buffer = Data()
-    self.cursor = self.buffer.startIndex
+      self.buffer = Data()
+      self.cursor = self.buffer.startIndex
+    }
   }
 
   func retry() {
-    self.stop()
+    self.queue.sync {
+      self.task?.cancel()
+      self.task = nil
 
-    self.buffer = Data()
-    self.cursor = self.buffer.startIndex
+      self.buffer = Data()
+      self.cursor = self.buffer.startIndex
 
-    self.task = self.session?.dataTask(with: self.url)
-    self.task?.resume()
+      self.task = self.session?.dataTask(with: self.url)
+      self.task?.resume()
+    }
   }
 
   func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
@@ -81,18 +87,20 @@ class MjpegReader: NSObject, URLSessionDelegate, URLSessionDataDelegate {
       return
     }
 
-    self.buffer.append(data)
+    self.queue.async {
+      self.buffer.append(data)
 
-    let (end, cursor) = self.findEnd(self.buffer, cursor: self.cursor)
-    if let end = end {
-      let frame = self.buffer.prefix(upTo: end)
-      self.parseFrame(frame)
-      self.buffer = self.buffer.suffix(from: end)
-      self.cursor = self.buffer.startIndex
-    }
+      let (end, cursor) = self.findEnd(self.buffer, cursor: self.cursor)
+      if let end = end {
+        let frame = self.buffer.prefix(upTo: end)
+        self.parseFrame(frame)
+        self.buffer = self.buffer.suffix(from: end)
+        self.cursor = self.buffer.startIndex
+      }
 
-    if let cursor = cursor {
-      self.cursor = cursor
+      if let cursor = cursor {
+        self.cursor = cursor
+      }
     }
   }
 
@@ -156,12 +164,15 @@ class MjpegReader: NSObject, URLSessionDelegate, URLSessionDataDelegate {
 
     if let error = error as? URLError {
       switch error.code {
-      case .cancelled,
-        .cannotConnectToHost,
+      case .cannotConnectToHost,
         .networkConnectionLost,
         .notConnectedToInternet,
         .timedOut:
         self.retry()
+      case .cancelled:
+        // expected, this happens when retrying, so we ignore it
+        break
+
       default:
         Bugsnag.notifyError(error)
         break
